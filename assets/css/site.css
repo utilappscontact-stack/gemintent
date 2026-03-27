@@ -816,3 +816,77 @@ button{font:inherit}
   .wt-sec-card { border-right: none; border-bottom: 1px solid var(--border, #E8E3DC); }
   .wt-sec-card:last-child { border-bottom: none; }
 }
+
+/* ── Stone image container ──────────────────────────────────────────────────
+   Replace .stone-img-placeholder with a real <img> when you have photos.
+   The container maintains aspect ratio and styling automatically.
+   ────────────────────────────────────────────────────────────────────────── */
+.stone-img-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+  background: var(--surface, #FAF8F5);
+}
+.stone-img-container img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.stone-img-placeholder {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.stone-img-placeholder-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+}
+.stone-img-placeholder-hint {
+  font-size: 10px;
+  opacity: 0.35;
+  font-family: monospace;
+}
+.stone-img-caption {
+  font-size: 10px;
+  color: #aaa;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.03);
+  line-height: 1.4;
+}
+/* Pinterest-style image grid — for when you have multiple photos */
+.stone-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.stone-img-grid .stone-img-container { margin-bottom: 0; }
+.stone-img-grid .stone-img-container img,
+.stone-img-grid .stone-img-placeholder { height: 180px; }
+@media (max-width: 600px) {
+  .stone-img-grid { grid-template-columns: 1fr; }
+}
+
+/* AI prompt badge — shows readers an image was AI-generated */
+.img-source-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.45);
+  color: rgba(255,255,255,0.85);
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+}
