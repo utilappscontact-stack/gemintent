@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer | Gem Intent</title>
+  <meta name="description" content="Disclaimer for Gem Intent — all content is informational only and not medical advice.">
+  <link rel="canonical" href="https://gemintent.com/disclaimer/">
+  <meta property="og:title" content="Disclaimer | Gem Intent">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gem Intent">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #1C1C1A; line-height: 1.6; }
+    a { color: #3D2B55; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav { position: sticky; top: 0; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; z-index: 100; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
+    .nav-links a:hover { color: #3D2B55; }
+    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-mobile { display: none; flex-direction: column; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; padding: 16px 24px; gap: 16px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
+
+    .prose { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+    .prose h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; color: #3D2B55; font-weight: 500; margin-bottom: 8px; }
+    .prose .last-updated { font-size: 13px; color: #999; margin-bottom: 40px; }
+    .prose h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: #3D2B55; font-weight: 500; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid #E8E3DC; padding-bottom: 6px; }
+    .prose p { font-size: 15px; color: #1C1C1A; line-height: 1.8; margin-bottom: 14px; }
+    .prose ul { padding-left: 20px; margin-bottom: 16px; }
+    .prose li { font-size: 15px; color: #1C1C1A; line-height: 1.8; margin-bottom: 8px; }
+    .notice-box { background: #FFFBEB; border: 2px solid #B8924A; border-radius: 10px; padding: 20px 24px; margin-bottom: 32px; }
+    .notice-box p { font-size: 14px; color: #1C1C1A; margin-bottom: 0; line-height: 1.7; }
+
+    footer { background: #3D2B55; padding: 40px 24px; color: rgba(255,255,255,0.7); margin-top: 64px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; }
+    footer a { color: #B8924A; text-decoration: none; }
+    footer a:hover { color: #FFFFFF; }
+    .footer-disclosure { max-width: 1100px; margin: 0 auto; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .footer-inner { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,8 18,21 6,21 2,8" stroke="#3D2B55" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:#3D2B55;font-weight:500;margin-left:8px;">Gem Intent</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Stones</a></li>
+      <li><a href="/finder.html">Find My Stone</a></li>
+      <li><a href="#">Gifts</a></li>
+      <li><a href="#">Authenticity</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><rect y="0" width="22" height="2" fill="#3D2B55"/><rect y="7" width="22" height="2" fill="#3D2B55"/><rect y="14" width="22" height="2" fill="#3D2B55"/></svg>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#">Stones</a>
+    <a href="/finder.html">Find My Stone</a>
+    <a href="#">Gifts</a>
+    <a href="#">Authenticity</a>
+  </div>
+
+  <div class="prose">
+    <h1>Disclaimer</h1>
+    <p class="last-updated">Last updated: March 27, 2026</p>
+
+    <div class="notice-box">
+      <p><strong>Important:</strong> Nothing on this website constitutes medical, therapeutic, psychological, or health advice of any kind. Do not use information on this site as a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for any health concerns.</p>
+    </div>
+
+    <h2>Informational purposes only</h2>
+    <p>All content on Gem Intent (gemintent.com) is provided for informational and educational purposes only. Nothing on this website constitutes or should be taken as medical, therapeutic, psychological, psychiatric, or health advice of any kind. Do not use information on this site as a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for any health concerns you may have.</p>
+
+    <h2>Stone associations and traditional use</h2>
+    <p>Descriptions of stone properties, associations, and traditional uses on this website are based on cultural traditions, historical records, folklore, and documented practices across various civilisations. These associations have not been evaluated by any medical or scientific regulatory body. Gem Intent makes no claims that semi-precious stones produce any specific physical, mental, emotional, or spiritual outcomes. Statements about traditional associations are presented as historical and cultural information only.</p>
+
+    <h2>Affiliate links</h2>
+    <p>Gem Intent participates in affiliate marketing programmes including Amazon Associates and the Awin affiliate network. Some links on this site are affiliate links — if you click a link and make a purchase, we may earn a commission from the retailer at no additional cost to you. Our recommendations are based on independent research into product quality, seller reputation, and authenticity practices. Affiliate relationships do not influence which stones or sellers we recommend.</p>
+
+    <h2>Accuracy of information</h2>
+    <p>We make every effort to provide accurate and up-to-date information. However, stone prices, product availability, seller policies, and market conditions change frequently. All prices mentioned on this site are approximate and may vary significantly depending on seller, stone quality, bead size, and market fluctuations. We recommend verifying prices and product details with sellers before purchasing.</p>
+
+    <h2>External links</h2>
+    <p>This site contains links to third-party websites including retailer pages and product listings. Gem Intent is not responsible for the content, accuracy, privacy practices, or policies of any external sites. Links to external sites do not constitute an endorsement of those sites, their products, or their business practices. We encourage you to review the terms and privacy policies of any external site you visit.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by applicable law, Gem Intent, its owners, contributors, and operators accept no liability for any loss or damage — direct, indirect, incidental, or consequential — arising from reliance on information provided on this website, from use of the Stone Finder tool, or from purchasing products through links on this site. Use of this website and its tools is entirely at your own risk.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2025 Gem Intent</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="footer-disclosure">
+      Some links on this site earn us a commission at no extra cost to you. This does not influence our recommendations.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('nav-mobile').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
