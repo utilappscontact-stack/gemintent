@@ -4,125 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Gem Intent</title>
-  <meta name="description" content="Privacy policy for Gem Intent — what data third-party services collect and how it is used.">
-  <link rel="canonical" href="https://gemintent.com/privacy/">
+  <meta name="description" content="Gem Intent privacy policy for site visitors, including analytics, affiliate clicks, and contact submissions.">
+  <link rel="canonical" href="https://gemintent.com/privacy.html">
   <meta property="og:title" content="Privacy Policy | Gem Intent">
+  <meta property="og:description" content="Gem Intent privacy policy for site visitors, including analytics, affiliate clicks, and contact submissions.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Gem Intent">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #1C1C1A; line-height: 1.6; }
-    a { color: #3D2B55; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    nav { position: sticky; top: 0; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; z-index: 100; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-    .nav-links a:hover { color: #3D2B55; }
-    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-mobile { display: none; flex-direction: column; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; padding: 16px 24px; gap: 16px; }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-
-    .prose { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
-    .prose h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; color: #3D2B55; font-weight: 500; margin-bottom: 8px; }
-    .prose .last-updated { font-size: 13px; color: #999; margin-bottom: 40px; }
-    .prose h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: #3D2B55; font-weight: 500; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid #E8E3DC; padding-bottom: 6px; }
-    .prose p { font-size: 15px; color: #1C1C1A; line-height: 1.8; margin-bottom: 14px; }
-    .prose ul { padding-left: 20px; margin-bottom: 16px; }
-    .prose li { font-size: 15px; color: #1C1C1A; line-height: 1.8; margin-bottom: 8px; }
-
-    footer { background: #3D2B55; padding: 40px 24px; color: rgba(255,255,255,0.7); margin-top: 64px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; }
-    footer a { color: #B8924A; text-decoration: none; }
-    footer a:hover { color: #FFFFFF; }
-    .footer-disclosure { max-width: 1100px; margin: 0 auto; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .footer-inner { flex-direction: column; gap: 20px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PVJ1NBPWG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9PVJ1NBPWG');
+  </script>
 </head>
-<body>
+<body class="">
 
-  <nav>
-    <a href="/" class="nav-logo">
-      <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="12,2 22,8 18,21 6,21 2,8" stroke="#3D2B55" stroke-width="1.5" fill="none"/>
-      </svg>
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:#3D2B55;font-weight:500;margin-left:8px;">Gem Intent</span>
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html" aria-label="Gem Intent home">
+      <img src="assets/img/logo-mark.svg" alt="" width="28" height="28">
+      <span>Gem Intent</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#">Stones</a></li>
-      <li><a href="/finder.html">Find My Stone</a></li>
-      <li><a href="#">Gifts</a></li>
-      <li><a href="#">Authenticity</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><rect y="0" width="22" height="2" fill="#3D2B55"/><rect y="7" width="22" height="2" fill="#3D2B55"/><rect y="14" width="22" height="2" fill="#3D2B55"/></svg>
-    </button>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="finder.html">Finder</a>
+      <a href="stones/index.html">Featured stones</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="finder.html">Open Stone Finder</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="finder.html">Finder</a>
+    <a href="stones/index.html">Featured stones</a>
+    <a href="guides/index.html">Guides</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a class="btn btn-primary mobile-nav-cta" href="finder.html">Open Stone Finder</a>
   </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="#">Stones</a>
-    <a href="/finder.html">Find My Stone</a>
-    <a href="#">Gifts</a>
-    <a href="#">Authenticity</a>
-  </div>
+</header>
 
-  <div class="prose">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: March 27, 2026</p>
+<main>
+<section class="page-hero"><div class="container"><div class="eyebrow">Privacy policy</div><h1>How visitor data is handled on Gem Intent.</h1><p>This page explains what data third-party services on this site may collect, how it is used, and how you can manage your preferences.</p></div></section>
+<section class="section section-top-tight"><div class="container page-shell"><article class="article-main">
+<h2>What may be collected.</h2><p>Like most content sites, Gem Intent may collect basic analytics information such as page visits, referral sources, device type, and approximate location. If a contact form or email is added, submitted information may also be retained so enquiries can be answered.</p>
+<h2>Affiliate and advertising links.</h2><p>When you click a marketplace or retailer link, that destination may use its own tracking systems. Gem Intent may also use affiliate tracking to understand whether a referral resulted in a purchase. That process is standard for affiliate publishing.</p>
+<h2>Cookies and analytics.</h2><p>If analytics or ad scripts are used, cookies or similar technologies may be involved. Update this page with the exact services you use before going live at full scale.</p>
+<h2>Your choices.</h2><p>If you contact the site directly and want your message removed from records, you can request that through the published contact method.</p>
+</article><aside class="sticky-card">
+<span class="card-label">In plain English</span>
+<h3>What this site does and does not collect.</h3>
+<p>Gem Intent does not collect your name, email, or any personally identifiable information. The Stone Finder runs entirely in your browser — your selections are not sent to any server.</p>
+<div class="check-list" style="margin-top:14px">
+<div class="check-item"><strong>No sign-up required</strong>The finder and all stone guides are free and require no account or registration of any kind.</div>
+<div class="check-item"><strong>No first-party cookies</strong>We do not set cookies. Third-party services such as Google Analytics may set their own.</div>
+<div class="check-item"><strong>Affiliate clicks</strong>When you click a product link, the destination retailer may use cookies to track the referral. This is standard and disclosed.</div>
+</div></aside></div></section></main>
 
-    <h2>Overview</h2>
-    <p>Gem Intent (gemintent.com) is a static informational website. We do not collect, store, or process any personally identifiable information directly. This policy explains what information third-party services on this site may collect and how it is used.</p>
-
-    <h2>Information collected by third parties</h2>
-    <p>We use the following third-party services which may set cookies or collect anonymised usage data:</p>
-    <ul>
-      <li><strong>Google Analytics:</strong> Collects anonymised page view data, session duration, and general geographic region (country level only). Google processes this data according to their privacy policy. You can opt out at tools.google.com/dlpage/gaoptout</li>
-      <li><strong>Google AdSense:</strong> May serve personalised advertisements using cookies. You can manage Google ad preferences at adssettings.google.com</li>
-      <li><strong>Affiliate networks (Awin, Amazon Associates):</strong> When you click an affiliate link on this site, the destination site may set cookies to track whether a purchase is made. We earn a commission on qualifying purchases. This does not affect the price you pay.</li>
-    </ul>
-
-    <h2>Cookies</h2>
-    <p>We do not set first-party cookies. Third-party cookies may be set by Google Analytics and Google AdSense as described above. You can manage or disable cookies through your browser settings. Most browsers allow you to refuse cookies entirely or to delete cookies that have already been set.</p>
-
-    <h2>Affiliate disclosure</h2>
-    <p>Some links on this site are affiliate links. If you click a link and make a purchase, Gem Intent may receive a commission from the seller at no additional cost to you. Our editorial recommendations are not influenced by these commercial relationships. We link only to sellers we believe offer genuine products and a reasonable customer experience.</p>
-
-    <h2>Data retention</h2>
-    <p>Gem Intent does not retain any user data. Google Analytics data is retained according to Google's standard data retention settings, which can be found in Google's documentation. You can request deletion of your data from Google directly through their privacy tools.</p>
-
-    <h2>Your rights</h2>
-    <p>Because we do not collect personal data, there is no data held by Gem Intent for us to provide, correct, or delete. For data held by Google or other third-party services mentioned in this policy, please refer to those organisations' privacy policies and privacy controls directly.</p>
-
-    <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, please contact us at <a href="mailto:hello@gemintent.com">hello@gemintent.com</a></p>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <span>© 2025 Gem Intent</span>
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-copy">© 2026 Gem Intent</div>
       <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
-        <a href="#">Affiliate Disclosure</a>
+        <a href="about.html">About</a>
+        <a href="how-we-calculate.html">How we calculate</a>
+        <a href="editorial-policy.html">Editorial policy</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
       </div>
     </div>
-    <div class="footer-disclosure">
-      Some links on this site earn us a commission at no extra cost to you. This does not influence our recommendations.
+    <div class="footer-note">
+      Some links on this site may earn a commission at no extra cost to you. That never changes how we describe a stone, score the finder, or write a guide.
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-mobile').classList.toggle('open');
-    });
-  </script>
+
 </body>
 </html>

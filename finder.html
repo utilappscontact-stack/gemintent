@@ -3,984 +3,261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stone Finder — Find Your Semi-Precious Stone Match | Gem Intent</title>
-  <meta name="description" content="Answer two questions and get a personalised semi-precious stone bracelet recommendation. Filter by intent, budget, style, and colour preference. Free, no sign-up.">
+  <title>Stone Finder — Intent, Budget, and Style Match Tool for 2026 | Gem Intent</title>
+  <meta name="description" content="Use the Gem Intent Stone Finder to match a stone by intent, use case, budget comfort, and visual preference. Hidden-result flow, WhatsApp share, and format guidance included.">
   <link rel="canonical" href="https://gemintent.com/finder/">
-  <meta property="og:title" content="Stone Finder — Find Your Semi-Precious Stone Match | Gem Intent">
-  <meta property="og:description" content="Answer two questions and get a personalised semi-precious stone bracelet recommendation. Filter by intent, budget, style, and colour preference. Free, no sign-up.">
+  <meta property="og:title" content="Stone Finder — Intent, Budget, and Style Match Tool for 2026 | Gem Intent">
+  <meta property="og:description" content="Use the Gem Intent Stone Finder to match a stone by intent, use case, budget comfort, and visual preference. Hidden-result flow, WhatsApp share, and format guidance included.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Gem Intent">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Gem Intent Stone Finder",
-    "url": "https://gemintent.com/finder/",
-    "description": "Find the right semi-precious stone bracelet for your intent, budget, and style.",
-    "applicationCategory": "UtilityApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How does the Stone Finder work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The tool matches your selected intent to semi-precious stones that have been traditionally associated with similar themes across various cultures and historical traditions. It is an informational guide, not a medical tool."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are the recommendations based on science?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. The associations are based on cultural history, traditional use, and documented folklore. We do not make scientific or medical claims."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I do not believe in crystal properties?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "That is completely fine. Many people use this tool purely for shopping guidance or to find a meaningful gift. The tool works equally well for skeptics and believers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I trust the recommended sellers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We link to established, reputable sellers. We have an affiliate relationship with some of them, which means we may earn a small commission on sales. This never influences which stones we recommend."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is the Stone Finder free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, completely free. No sign-up required, no data collected, no cost."
-        }
-      }
-    ]
-  }
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #1C1C1A; line-height: 1.6; }
-    img { max-width: 100%; display: block; }
-    a { color: #3D2B55; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; z-index: 100; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-    .nav-links a:hover { color: #3D2B55; }
-    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-mobile { display: none; flex-direction: column; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; padding: 16px 24px; gap: 16px; }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-
-    /* BUTTONS */
-    .btn-primary { background: #3D2B55; color: #FFFFFF; border: none; border-radius: 6px; padding: 9px 18px; font-size: 13px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; text-decoration: none; display: inline-block; }
-    .btn-primary:hover { text-decoration: none; opacity: 0.9; }
-    .btn-secondary { background: transparent; border: 1px solid #3D2B55; color: #3D2B55; border-radius: 6px; padding: 9px 18px; font-size: 13px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; text-decoration: none; display: inline-block; }
-    .btn-secondary:hover { text-decoration: none; background: #FAF8F5; }
-
-    /* FINDER PAGE */
-    .finder-page { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
-    .finder-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; color: #3D2B55; font-weight: 500; text-align: center; margin-bottom: 12px; }
-    .finder-sub { font-size: 16px; color: #666666; text-align: center; margin-bottom: 8px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .finder-disclaimer { font-size: 12px; color: #999999; text-align: center; font-style: italic; margin-bottom: 40px; }
-    .step-indicator { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #B8924A; text-align: center; margin-bottom: 12px; }
-    .step-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; color: #3D2B55; font-weight: 500; text-align: center; margin-bottom: 8px; }
-    .step-sub { font-size: 14px; color: #666666; text-align: center; margin-bottom: 28px; }
-
-    /* FINDER INTENT GRID */
-    .finder-intent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-    .finder-intent-card { background: #FFFFFF; border: 1.5px solid #E8E3DC; border-radius: 12px; padding: 22px 16px; cursor: pointer; transition: all 0.2s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; font-family: 'Inter', system-ui, sans-serif; text-align: left; width: 100%; }
-    .finder-intent-card:hover { border-color: #B8924A; transform: translateY(-2px); }
-    .finder-intent-card.selected { border-color: #3D2B55; background: #FAF8F5; border-width: 2px; }
-    .intent-label { font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 14px; color: #1C1C1A; margin-bottom: 4px; }
-    .intent-desc { font-size: 12px; color: #666666; }
-
-    /* GIFTING SUB */
-    .gifting-sub { background: #FAF8F5; border-radius: 10px; padding: 20px; margin-bottom: 20px; display: none; }
-    .gifting-sub.visible { display: block; }
-    .gifting-label { font-size: 14px; color: #1C1C1A; margin-bottom: 12px; font-weight: 500; }
-
-    /* PILLS */
-    .pill-group { display: flex; gap: 8px; flex-wrap: wrap; }
-    .pill { border: 1px solid #E8E3DC; background: #FFFFFF; color: #1C1C1A; border-radius: 20px; padding: 6px 16px; font-size: 13px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; transition: all 0.15s; }
-    .pill:hover { border-color: #3D2B55; }
-    .pill.selected { background: #3D2B55; color: #FFFFFF; border-color: #3D2B55; }
-
-    /* CONTINUE BTN */
-    .continue-btn { display: block; margin: 0 auto; background: #B8924A; color: #FFFFFF; border: none; border-radius: 6px; padding: 12px 32px; font-size: 15px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; transition: background 0.2s; opacity: 0.4; pointer-events: none; }
-    .continue-btn.enabled { opacity: 1; pointer-events: auto; }
-    .continue-btn.enabled:hover { background: #9A7A3A; }
-
-    /* SUMMARY BAR */
-    .summary-bar { background: #F0EDE8; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; display: none; justify-content: space-between; align-items: center; font-size: 14px; }
-    .summary-bar.visible { display: flex; }
-    .edit-link { color: #B8924A; cursor: pointer; font-size: 13px; text-decoration: underline; }
-
-    /* STEP 2 */
-    .step-2 { display: none; }
-    .step-2.visible { display: block; }
-    .filter-section { margin-bottom: 28px; }
-    .filter-label { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #666666; margin-bottom: 10px; }
-    .zodiac-select { width: 100%; padding: 10px 14px; border: 1px solid #E8E3DC; border-radius: 6px; font-size: 14px; font-family: 'Inter', system-ui, sans-serif; background: #FFFFFF; color: #1C1C1A; appearance: none; }
-
-    /* FIND BTN */
-    .find-btn { display: block; margin: 0 auto; background: #B8924A; color: #FFFFFF; border: none; border-radius: 6px; padding: 14px 40px; font-size: 16px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; }
-    .find-btn:hover { background: #9A7A3A; }
-
-    /* RESULTS */
-    .results-section { display: none; }
-    .results-section.visible { display: block; }
-    .results-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: #3D2B55; font-weight: 500; text-align: center; margin-bottom: 8px; }
-    .results-sub { font-size: 14px; color: #666666; text-align: center; margin-bottom: 32px; }
-    .primary-card { border: 3px solid #B8924A; border-radius: 14px; padding: 28px; background: #FFFFFF; margin-bottom: 16px; }
-    .secondary-card { border: 1px solid #E8E3DC; border-radius: 14px; padding: 24px; background: #FFFFFF; margin-bottom: 16px; }
-    .match-badge { display: inline-block; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; background: #3D2B55; color: #FFFFFF; border-radius: 4px; padding: 3px 10px; margin-bottom: 12px; }
-    .result-stone-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: #3D2B55; font-weight: 500; margin: 12px 0 8px; }
-    .result-note { font-size: 14px; color: #666666; font-style: italic; line-height: 1.6; margin-bottom: 16px; }
-    .info-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-    .info-badge { background: #F0EDE8; color: #1C1C1A; font-size: 12px; border-radius: 12px; padding: 5px 12px; }
-    .auth-box { border: 2px solid #B8924A; background: #FFFBEB; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
-    .auth-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #B8924A; font-weight: 500; margin-bottom: 6px; }
-    .auth-text { font-size: 13px; color: #1C1C1A; line-height: 1.6; }
-    .care-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; font-size: 13px; color: #666666; }
-    .care-item { display: flex; align-items: center; gap: 6px; }
-    .card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    /* COMBO BOX */
-    .combo-box { background: #FAF5EC; border-radius: 12px; padding: 24px; margin-top: 16px; text-align: center; }
-    .combo-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #666666; margin-bottom: 16px; }
-    .combo-stones { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; }
-    .combo-circle { border-radius: 50%; width: 56px; height: 56px; }
-    .combo-plus { font-size: 20px; color: #666666; }
-    .combo-names { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: #3D2B55; margin-bottom: 8px; }
-    .combo-reason { font-size: 13px; color: #666666; max-width: 400px; margin: 0 auto 16px; }
-
-    /* ACTION ROW */
-    .action-row { display: flex; justify-content: center; gap: 20px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #E8E3DC; }
-
-    /* HOW IT WORKS */
-    .how-it-works { background: #FAF8F5; border-radius: 12px; padding: 32px; margin-top: 40px; }
-    .how-it-works h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: #3D2B55; margin-bottom: 16px; font-weight: 500; }
-    .how-it-works p { font-size: 14px; color: #666666; line-height: 1.7; margin-bottom: 12px; }
-
-    /* FAQ */
-    .faq-section { margin-top: 48px; }
-    .faq-section h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; color: #3D2B55; font-weight: 500; margin-bottom: 24px; }
-    .faq-item { border-bottom: 1px solid #E8E3DC; padding: 20px 0; }
-    .faq-q { font-size: 15px; font-weight: 500; color: #1C1C1A; margin-bottom: 8px; }
-    .faq-a { font-size: 14px; color: #666666; line-height: 1.7; }
-
-    /* AD PLACEHOLDER */
-    .ad-placeholder { width: 100%; max-width: 728px; height: 90px; background: #F5F5F3; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #aaa; border: 0.5px solid #E8E3DC; margin: 24px auto; }
-
-    /* FOOTER */
-    footer { background: #3D2B55; padding: 40px 24px; color: rgba(255,255,255,0.7); }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; }
-    footer a { color: #B8924A; text-decoration: none; }
-    footer a:hover { color: #FFFFFF; }
-    .footer-disclosure { max-width: 1100px; margin: 0 auto; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .finder-intent-grid { grid-template-columns: 1fr 1fr; }
-      .footer-inner { flex-direction: column; gap: 20px; }
-      .action-row { flex-direction: column; align-items: center; }
-    }
-    @media (max-width: 480px) {
-      .finder-intent-grid { grid-template-columns: 1fr; }
-      .finder-title { font-size: 34px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="12,2 22,8 18,21 6,21 2,8" stroke="#3D2B55" stroke-width="1.5" fill="none"/>
-      </svg>
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:#3D2B55;font-weight:500;margin-left:8px;">Gem Intent</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#">Stones</a></li>
-      <li><a href="finder.html">Find My Stone</a></li>
-      <li><a href="#">Gifts</a></li>
-      <li><a href="#">Authenticity</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0" width="22" height="2" fill="#3D2B55"/>
-        <rect y="7" width="22" height="2" fill="#3D2B55"/>
-        <rect y="14" width="22" height="2" fill="#3D2B55"/>
-      </svg>
-    </button>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="#">Stones</a>
-    <a href="finder.html">Find My Stone</a>
-    <a href="#">Gifts</a>
-    <a href="#">Authenticity</a>
-  </div>
-
-  <!-- FINDER PAGE -->
-  <main class="finder-page">
-
-    <p class="finder-disclaimer">For informational purposes only. Not medical advice.</p>
-    <p class="step-indicator" id="step-indicator">Step 1 of 2</p>
-    <h1 class="finder-title">Find Your Stone</h1>
-    <p class="finder-sub">Answer two questions and get a personalised recommendation with authenticity and care guidance.</p>
-
-    <!-- STEP 1 -->
-    <div id="step-1">
-      <p class="step-title">What are you looking for?</p>
-      <p class="step-sub">Select the theme that feels most relevant.</p>
-
-      <div class="finder-intent-grid">
-        <button class="finder-intent-card" data-intent="calm">
-          <span class="intent-label">Calm and stress relief</span>
-          <span class="intent-desc">Quieten overthinking, find stillness</span>
-        </button>
-        <button class="finder-intent-card" data-intent="focus">
-          <span class="intent-label">Focus and clarity</span>
-          <span class="intent-desc">Sharper thinking, less distraction</span>
-        </button>
-        <button class="finder-intent-card" data-intent="confidence">
-          <span class="intent-label">Confidence</span>
-          <span class="intent-desc">Self-assurance and speaking up</span>
-        </button>
-        <button class="finder-intent-card" data-intent="grounding">
-          <span class="intent-label">Grounding</span>
-          <span class="intent-desc">Feeling centred and stable</span>
-        </button>
-        <button class="finder-intent-card" data-intent="love">
-          <span class="intent-label">Love and relationships</span>
-          <span class="intent-desc">Connection, warmth, openness</span>
-        </button>
-        <button class="finder-intent-card" data-intent="creativity">
-          <span class="intent-label">Creativity</span>
-          <span class="intent-desc">Fresh ideas and artistic flow</span>
-        </button>
-        <button class="finder-intent-card" data-intent="positivity">
-          <span class="intent-label">Positivity and energy</span>
-          <span class="intent-desc">Lift your mood and motivation</span>
-        </button>
-        <button class="finder-intent-card" data-intent="protection">
-          <span class="intent-label">Protection</span>
-          <span class="intent-desc">Boundaries and feeling secure</span>
-        </button>
-        <button class="finder-intent-card" data-intent="gifting">
-          <span class="intent-label">Gifting</span>
-          <span class="intent-desc">The right stone for someone else</span>
-        </button>
-      </div>
-
-      <!-- GIFTING SUB-QUESTION -->
-      <div id="gifting-sub" class="gifting-sub">
-        <p class="gifting-label">Who is this for?</p>
-        <div class="pill-group" id="gift-pills">
-          <button class="pill" data-gift="Partner">Partner</button>
-          <button class="pill" data-gift="Friend">Friend</button>
-          <button class="pill" data-gift="Parent">Parent</button>
-          <button class="pill" data-gift="Colleague">Colleague</button>
-          <button class="pill" data-gift="Just exploring">Just exploring</button>
-        </div>
-      </div>
-
-      <button class="continue-btn" id="continue-btn">Continue</button>
-    </div>
-
-    <!-- SUMMARY BAR 1 -->
-    <div class="summary-bar" id="summary-1">
-      <span id="summary-intent-text"></span>
-      <span class="edit-link" id="edit-intent">Edit</span>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="step-2" id="step-2">
-      <p class="step-title">A few more details</p>
-      <p class="step-sub">All optional — skip any you prefer.</p>
-
-      <div class="filter-section">
-        <p class="filter-label">Budget</p>
-        <div class="pill-group">
-          <button class="pill" data-filter="budget" data-value="budget">Under $10 / Rs.800</button>
-          <button class="pill" data-filter="budget" data-value="mid">$10–30 / Rs.800–2500</button>
-          <button class="pill" data-filter="budget" data-value="premium">$30–80 / Rs.2500–6500</button>
-          <button class="pill" data-filter="budget" data-value="any">No budget limit</button>
-        </div>
-      </div>
-
-      <div class="filter-section">
-        <p class="filter-label">Style</p>
-        <div class="pill-group">
-          <button class="pill" data-filter="style" data-value="minimal">Minimal and everyday</button>
-          <button class="pill" data-filter="style" data-value="bold">Bold statement</button>
-          <button class="pill" data-filter="style" data-value="stackable">Stackable layers</button>
-          <button class="pill" data-filter="style" data-value="earthy">Natural and earthy</button>
-        </div>
-      </div>
-
-      <div class="filter-section">
-        <p class="filter-label">Colour feel</p>
-        <div class="pill-group">
-          <button class="pill" data-filter="colour" data-value="cool">Cool tones — blues, purples</button>
-          <button class="pill" data-filter="colour" data-value="warm">Warm tones — oranges, reds</button>
-          <button class="pill" data-filter="colour" data-value="earthy">Earthy — greens, browns, black</button>
-          <button class="pill" data-filter="colour" data-value="pale">Pale and neutral</button>
-          <button class="pill" data-filter="colour" data-value="any">No preference</button>
-        </div>
-      </div>
-
-      <div class="filter-section">
-        <p class="filter-label">Zodiac (optional)</p>
-        <select class="zodiac-select" id="zodiac-select">
-          <option value="none">Skip zodiac</option>
-          <option value="Aries">Aries</option>
-          <option value="Taurus">Taurus</option>
-          <option value="Gemini">Gemini</option>
-          <option value="Cancer">Cancer</option>
-          <option value="Leo">Leo</option>
-          <option value="Virgo">Virgo</option>
-          <option value="Libra">Libra</option>
-          <option value="Scorpio">Scorpio</option>
-          <option value="Sagittarius">Sagittarius</option>
-          <option value="Capricorn">Capricorn</option>
-          <option value="Aquarius">Aquarius</option>
-          <option value="Pisces">Pisces</option>
-        </select>
-      </div>
-
-      <button class="find-btn" id="find-btn">Find my stone</button>
-    </div>
-
-    <!-- SUMMARY BAR 2 -->
-    <div class="summary-bar" id="summary-2">
-      <span id="summary-2-text"></span>
-      <span class="edit-link" id="edit-all">Edit</span>
-    </div>
-
-    <!-- RESULTS SECTION -->
-    <div class="results-section" id="results-section">
-      <p class="results-heading">Your Stone Matches</p>
-      <p class="results-sub">Based on your selections. Tap any stone to explore its full guide.</p>
-      <div id="primary-result" class="primary-card"></div>
-      <div id="secondary-result" class="secondary-card"></div>
-      <div id="combo-box" class="combo-box"></div>
-      <div class="action-row">
-        <button class="btn-secondary" id="reset-btn">Start over</button>
-        <button class="btn-primary" id="copy-btn">Copy result</button>
-      </div>
-    </div>
-
-    <div class="ad-placeholder" id="ad-finder-bottom">Advertisement</div>
-
-    <!-- HOW IT WORKS -->
-    <div class="how-it-works">
-      <h3>How the Stone Finder works</h3>
-      <p>The Stone Finder matches your selected intent to semi-precious stones based on traditional and cultural associations documented across various civilisations, historical records, and traditional practices. Each stone in our database has been researched for its documented historical use across cultures — from ancient Greek and Roman traditions, to South Asian Ayurvedic practices, to indigenous traditions across multiple continents. This is informational and educational content, not a prescription or recommendation system.</p>
-      <p>This tool does not provide medical, therapeutic, or psychological advice. Stone associations described are based on cultural tradition and historical folklore, not scientific research. Please consult qualified healthcare professionals for any health concerns.</p>
-      <p>Some of the sellers we link to are affiliate partners. This means Gem Intent may earn a small commission if you purchase through our links, at no extra cost to you. Affiliate relationships do not influence which stones we recommend — our matching logic is based solely on intent and preference alignment.</p>
-    </div>
-
-    <!-- FAQ -->
-    <div class="faq-section">
-      <h3>Frequently asked questions</h3>
-      <div class="faq-item">
-        <p class="faq-q">How does the Stone Finder work?</p>
-        <p class="faq-a">The tool matches your selected intent to semi-precious stones that have been traditionally associated with similar themes across various cultures and historical traditions. It is an informational guide, not a medical tool.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Are the recommendations based on science?</p>
-        <p class="faq-a">No. The associations are based on cultural history, traditional use, and documented folklore. Gem Intent does not make scientific or medical claims about stone properties or effects.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">What if I do not believe in crystal properties?</p>
-        <p class="faq-a">That is completely fine. Many people use this tool purely for shopping guidance or to find a meaningful gift. The tool works equally well for skeptics and believers — the historical and cultural context is interesting regardless of personal belief.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Can I trust the recommended sellers?</p>
-        <p class="faq-a">We link to established, reputable sellers including Conscious Items, Etsy artisan sellers, and Amazon. We have an affiliate relationship with some of them, which means we may earn a small commission on sales. This never influences which stones we recommend.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Is the Stone Finder free?</p>
-        <p class="faq-a">Yes, completely free. No sign-up required, no data collected, no cost. The tool runs entirely in your browser and does not send any information to any server.</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span>© 2025 Gem Intent</span>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
-        <a href="#">Affiliate Disclosure</a>
-      </div>
-    </div>
-    <div class="footer-disclosure">
-      Some links on this site earn us a commission at no extra cost to you. This does not influence our recommendations.
-    </div>
-  </footer>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Gem Intent Stone Finder", "url": "https://gemintent.com/finder/", "applicationCategory": "UtilityApplication", "description": "Choose your intent, use case, budget comfort, and visual preference to unlock a semi-precious stone recommendation."}</script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PVJ1NBPWG"></script>
   <script>
-    // =========================================================
-    // STONES DATA — all 16 stones, all fields
-    // =========================================================
-    const STONES = [
-      {
-        id: "amethyst", name: "Amethyst", hex: "#9B59B6",
-        colour_desc: "Ranges from pale lilac to deep violet-purple, with natural colour variation between and within individual beads.",
-        hardness: 7, price_range: "Rs.300-800 / $8-22", origin: "Brazil, Uruguay, Zambia",
-        intents: ["calm","stress","clarity","sleep","gifting"],
-        traditional_note: "Traditionally associated with clarity of thought and restraint across ancient Greek, Roman, and medieval European cultures, where it was also linked to temperance.",
-        bracelet_look: "Deep purple beads with natural colour variation — darker and lighter patches within each bead give a rich, layered appearance on the wrist.",
-        authenticity_note: "Dyed glass is the most common substitute; genuine amethyst feels noticeably cool to the touch and warms slowly in the hand, while glass warms almost immediately.",
-        water_safe: true, sun_fade: true,
-        care_tip: "Wipe with a soft damp cloth and dry immediately; avoid prolonged sunlight which gradually fades the purple to pale lavender.",
-        pairs_with: ["rose_quartz","clear_quartz"], budget_tier: "budget",
-        etsy_search: "genuine amethyst bracelet natural beads"
-      },
-      {
-        id: "rose_quartz", name: "Rose Quartz", hex: "#F4C2C2",
-        colour_desc: "Soft, translucent pale pink with a gentle milky haze and subtle internal cloud-like inclusions.",
-        hardness: 7, price_range: "Rs.300-900 / $8-25", origin: "Brazil, Madagascar, South Africa",
-        intents: ["love","relationships","calm","gifting","positivity"],
-        traditional_note: "Historically used across cultures as a symbol of warmth and connection, with documented use in ancient Egyptian and Roman jewellery associated with affection and harmony.",
-        bracelet_look: "Pale blush-pink beads with a soft translucent milky quality — subtle and delicate on the wrist, suits both minimalist and layered styles.",
-        authenticity_note: "Dyed glass and pink-dyed howlite are the most common fakes; genuine rose quartz has a slight milky translucency and internal haziness that dyed glass lacks.",
-        water_safe: true, sun_fade: true,
-        care_tip: "Clean with a soft damp cloth; avoid prolonged sunlight as this can gradually lighten the already-pale pink tone.",
-        pairs_with: ["amethyst","clear_quartz"], budget_tier: "budget",
-        etsy_search: "genuine rose quartz bracelet natural stone"
-      },
-      {
-        id: "tigers_eye", name: "Tiger's Eye", hex: "#B8860B",
-        colour_desc: "Warm golden-brown with a distinctive silky chatoyancy — a moving band of light that shifts as the stone is turned.",
-        hardness: 7, price_range: "Rs.250-700 / $7-20", origin: "South Africa, India, Australia",
-        intents: ["confidence","focus","clarity","grounding","energy"],
-        traditional_note: "Historically used across cultures for courage and clear perception, with documented use in ancient Roman military contexts where soldiers carried it as a talisman before battle.",
-        bracelet_look: "Warm caramel and gold beads with a shifting silky sheen — the chatoyancy creates movement and depth, making it eye-catching without being loud.",
-        authenticity_note: "Dyed tiger's eye and glass imitations are common fakes; genuine tiger's eye displays a clear moving silky band of light called chatoyancy.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a slightly damp cloth and dry thoroughly; avoid harsh chemicals which can dull the surface polish.",
-        pairs_with: ["citrine","black_tourmaline"], budget_tier: "budget",
-        etsy_search: "genuine tiger eye bracelet natural chatoyant"
-      },
-      {
-        id: "clear_quartz", name: "Clear Quartz", hex: "#F0F0F0",
-        colour_desc: "Transparent to translucent colourless crystal, sometimes with fine internal inclusions or a slight icy white haze.",
-        hardness: 7, price_range: "Rs.200-600 / $5-18", origin: "Brazil, USA, China",
-        intents: ["clarity","focus","energy","gifting"],
-        traditional_note: "Historically used across cultures as a symbol of clarity and purpose, with documented use in ancient Greek, Celtic, and Japanese traditions as a sacred stone associated with purity.",
-        bracelet_look: "Icy transparent to milky white beads — clean and understated on the wrist, works well alone or as a neutral pairing with almost any other stone.",
-        authenticity_note: "Glass is the most common substitute for clear quartz; genuine quartz feels cold and stays cool longer than glass, and often shows fine internal inclusions or natural cloudiness under magnification.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Safe to rinse under cool water; dry promptly and store in a soft pouch away from harder stones that could scratch the surface.",
-        pairs_with: ["amethyst","rose_quartz"], budget_tier: "budget",
-        etsy_search: "genuine clear quartz crystal bracelet natural"
-      },
-      {
-        id: "black_tourmaline", name: "Black Tourmaline", hex: "#1C1C1C",
-        colour_desc: "Opaque deep black, sometimes with faint vertical striations or a subtle lustre on polished surfaces.",
-        hardness: 7.5, price_range: "Rs.350-900 / $10-25", origin: "Brazil, Pakistan, Sri Lanka",
-        intents: ["protection","grounding","stress","calm"],
-        traditional_note: "Historically used across cultures as a protective stone, with documented use in shamanic traditions across multiple continents and in traditional South Asian practices aimed at grounding and stability.",
-        bracelet_look: "Deep matte-to-glossy black beads — bold and grounding on the wrist, pairs well with lighter stones or metals for contrast.",
-        authenticity_note: "Black glass and dyed howlite are the most common fakes; genuine black tourmaline often shows faint vertical striations on the surface and a slightly uneven texture compared to perfectly smooth glass.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a dry or slightly damp cloth; avoid soaking as prolonged water exposure can affect the surface finish of lower-quality polish.",
-        pairs_with: ["clear_quartz","tigers_eye"], budget_tier: "budget",
-        etsy_search: "genuine black tourmaline bracelet natural stone"
-      },
-      {
-        id: "citrine", name: "Citrine", hex: "#E8A020",
-        colour_desc: "Warm golden yellow to amber-orange, transparent with a sunny translucency and occasional natural inclusions.",
-        hardness: 7, price_range: "Rs.300-800 / $8-22", origin: "Brazil, Spain, Bolivia",
-        intents: ["positivity","energy","creativity","confidence","gifting"],
-        traditional_note: "Traditionally associated with warmth, optimism, and generosity across Mediterranean and Asian cultures, where it was historically given as a gift and used decoratively in merchant households.",
-        bracelet_look: "Warm golden-amber transparent beads that catch the light — cheerful and warm on the wrist, suits yellow gold settings particularly well.",
-        authenticity_note: "Heat-treated amethyst sold as citrine is extremely common; natural citrine is relatively rare and most affordable citrine on the market is treated amethyst — a legitimate product if disclosed, but sellers should state which type they are selling.",
-        water_safe: true, sun_fade: true,
-        care_tip: "Avoid prolonged sunlight which can fade the warm colour; wipe clean with a soft damp cloth and store in a cool place.",
-        pairs_with: ["tigers_eye","green_aventurine"], budget_tier: "budget",
-        etsy_search: "genuine citrine bracelet natural golden yellow"
-      },
-      {
-        id: "labradorite", name: "Labradorite", hex: "#4682B4",
-        colour_desc: "Dark grey base stone with a spectacular iridescent play of blue, green, and gold light called labradorescence.",
-        hardness: 6.5, price_range: "Rs.600-2000 / $18-55", origin: "Canada, Madagascar, Finland",
-        intents: ["creativity","clarity","focus","protection"],
-        traditional_note: "Traditionally associated with imagination and the unseen, with the Inuit peoples of Labrador historically describing it as frozen northern lights captured in stone.",
-        bracelet_look: "Dark grey beads that flash iridescent blue and green when the light catches them — understated from some angles, dramatic from others; a favourite for creative and artistic aesthetics.",
-        authenticity_note: "Spectrolite imitations and dyed glass are common fakes; genuine labradorite displays labradorescence — a visible colour shift of blue, green, or gold — only from certain angles, not uniformly from all directions.",
-        water_safe: false, sun_fade: false,
-        care_tip: "Wipe gently with a dry soft cloth; avoid water and harsh chemicals as labradorite is relatively soft and prolonged moisture can affect the stone.",
-        pairs_with: ["moonstone","clear_quartz"], budget_tier: "premium",
-        etsy_search: "genuine labradorite bracelet natural flash"
-      },
-      {
-        id: "moonstone", name: "Moonstone", hex: "#E8E8F0",
-        colour_desc: "Translucent white to peach with a glowing blue-white adularescence — a floating inner light that moves across the surface.",
-        hardness: 6, price_range: "Rs.800-3000 / $22-80", origin: "Sri Lanka, India, Myanmar",
-        intents: ["calm","sleep","love","creativity","gifting"],
-        traditional_note: "Historically associated with cycles and intuition across South Asian, Roman, and Greek traditions, where it was linked to the moon and used in jewellery given during significant life transitions.",
-        bracelet_look: "Pale white to peachy translucent beads with a soft inner glow — ethereal and delicate on the wrist, especially visible in natural light.",
-        authenticity_note: "Opalite glass (sold misleadingly as moonstone) is the most common fake; genuine moonstone shows a blue adularescence that floats and shifts with movement, whereas opalite has a static milky glow that does not shift.",
-        water_safe: false, sun_fade: false,
-        care_tip: "Keep dry and avoid water; moonstone is relatively soft at Mohs 6 and can crack with thermal shock — store separately from harder stones.",
-        pairs_with: ["rose_quartz","labradorite"], budget_tier: "premium",
-        etsy_search: "genuine moonstone bracelet natural adularescence"
-      },
-      {
-        id: "carnelian", name: "Carnelian", hex: "#E85D26",
-        colour_desc: "Warm translucent orange-red to reddish-brown, with a glowing warmth when held up to the light.",
-        hardness: 7, price_range: "Rs.250-700 / $7-20", origin: "India, Brazil, Madagascar",
-        intents: ["confidence","creativity","energy","positivity"],
-        traditional_note: "Historically used across ancient Egyptian, Roman, and Islamic cultures as a stone of courage and eloquence, with documented use in signet rings and engraved seals across several millennia.",
-        bracelet_look: "Warm burnt-orange to reddish-brown translucent beads with natural colour banding — rich and earthy on the wrist, suits warm-toned skin and gold settings particularly well.",
-        authenticity_note: "Dyed agate is the most common fake for carnelian; genuine carnelian has natural colour banding and variation visible under magnification, while dyed agate often shows artificially even colour and may reveal dye concentrated in surface cracks.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a soft damp cloth; carnelian is durable and low-maintenance, but avoid harsh abrasives that could scratch the polish.",
-        pairs_with: ["tigers_eye","citrine"], budget_tier: "budget",
-        etsy_search: "genuine carnelian bracelet natural orange banded"
-      },
-      {
-        id: "aquamarine", name: "Aquamarine", hex: "#7EC8E3",
-        colour_desc: "Pale to medium blue-green with a clear watery translucency reminiscent of shallow tropical sea water.",
-        hardness: 7.5, price_range: "Rs.800-3500 / $22-95", origin: "Brazil, Pakistan, Nigeria",
-        intents: ["calm","clarity","stress","gifting"],
-        traditional_note: "Traditionally associated with clarity and calm across ancient Roman, Greek, and seafaring cultures, where sailors historically carried it as a protective talisman during ocean voyages.",
-        bracelet_look: "Pale watery blue-green translucent beads — clean and fresh on the wrist, particularly striking in natural daylight; suits silver and white gold settings.",
-        authenticity_note: "Blue-dyed glass and blue topaz are often substituted for aquamarine; genuine aquamarine has a natural pale blue-green colour with subtle internal inclusions — perfectly vivid blue stones at low prices warrant caution.",
-        water_safe: true, sun_fade: true,
-        care_tip: "Safe for brief water contact; avoid prolonged sunlight which can gradually fade the blue colour, and store in a soft pouch away from harder stones.",
-        pairs_with: ["amethyst","clear_quartz"], budget_tier: "premium",
-        etsy_search: "genuine aquamarine bracelet natural blue green"
-      },
-      {
-        id: "lapis_lazuli", name: "Lapis Lazuli", hex: "#1A3A6B",
-        colour_desc: "Rich opaque deep blue, often flecked with golden pyrite inclusions and occasional white calcite veining.",
-        hardness: 5.5, price_range: "Rs.400-1500 / $12-42", origin: "Afghanistan, Chile, Russia",
-        intents: ["focus","clarity","confidence","creativity"],
-        traditional_note: "Historically used across ancient Egyptian, Mesopotamian, and Renaissance European cultures as one of the most prized pigments and ornamental stones, appearing in royal burial artefacts and religious iconography across thousands of years.",
-        bracelet_look: "Deep royal blue opaque beads with flecks of golden pyrite — bold and rich on the wrist; one of the most visually striking stone bracelets available.",
-        authenticity_note: "Dyed howlite and sodalite are the most common substitutes for lapis lazuli; genuine lapis lazuli typically contains visible golden pyrite flecks and white calcite veins — uniformly perfect deep blue without any inclusions at low prices is a warning sign.",
-        water_safe: false, sun_fade: false,
-        care_tip: "Keep dry and avoid water; lapis lazuli is relatively soft at Mohs 5.5 and prolonged moisture can damage the surface — wipe clean with a dry soft cloth only.",
-        pairs_with: ["clear_quartz","pyrite"], budget_tier: "mid",
-        etsy_search: "genuine lapis lazuli bracelet natural pyrite flecks"
-      },
-      {
-        id: "obsidian", name: "Obsidian", hex: "#1A1A1A",
-        colour_desc: "Jet black volcanic glass with a smooth, glassy, highly reflective surface and conchoidal fracture pattern.",
-        hardness: 5.5, price_range: "Rs.200-600 / $5-18", origin: "Mexico, USA, Iceland",
-        intents: ["grounding","protection","stress","clarity"],
-        traditional_note: "Historically used across Mesoamerican, ancient Mediterranean, and indigenous North American cultures as a tool and ceremonial material, with associations with truth-telling and boundary-setting documented across several traditions.",
-        bracelet_look: "Highly polished jet black beads with a glassy mirror-like surface — sleek and modern on the wrist; particularly effective in minimalist and monochrome styles.",
-        authenticity_note: "Black glass is nearly identical to obsidian visually; genuine obsidian is a natural volcanic glass and may show conchoidal (shell-like) fracture marks on unpolished edges, while manufactured glass tends to be perfectly uniform throughout.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a soft cloth; obsidian is brittle despite its hardness — avoid dropping and store carefully to prevent chipping.",
-        pairs_with: ["black_tourmaline","clear_quartz"], budget_tier: "budget",
-        etsy_search: "genuine black obsidian bracelet natural volcanic"
-      },
-      {
-        id: "malachite", name: "Malachite", hex: "#1B7A4A",
-        colour_desc: "Vivid opaque green with distinctive banded or swirling patterns in alternating light and dark green.",
-        hardness: 4, price_range: "Rs.500-2000 / $14-55", origin: "Democratic Republic of Congo, Russia, Australia",
-        intents: ["creativity","confidence","positivity","protection"],
-        traditional_note: "Historically used across ancient Egyptian, Greek, and Russian Imperial cultures as a decorative and ornamental stone, with documented use in Egyptian eye makeup and as inlay in palace architecture.",
-        bracelet_look: "Vivid banded green beads with striking natural patterning — every bead is unique in its swirl pattern; bold and earthy on the wrist.",
-        authenticity_note: "Dyed howlite and green-dyed marble are common substitutes; genuine malachite has organic banded or concentric circular patterning with natural variation — printed or perfectly regular patterns are a sign of imitation.",
-        water_safe: false, sun_fade: false,
-        care_tip: "Keep dry and avoid water entirely; malachite is soft at Mohs 4 and water can damage the surface — wipe only with a dry soft cloth and avoid all chemicals.",
-        pairs_with: ["lapis_lazuli","clear_quartz"], budget_tier: "mid",
-        etsy_search: "genuine malachite bracelet natural banded green"
-      },
-      {
-        id: "garnet", name: "Garnet", hex: "#7B1C2E",
-        colour_desc: "Deep red to reddish-brown, transparent to translucent with a rich colour and glassy lustre.",
-        hardness: 7, price_range: "Rs.400-1500 / $12-42", origin: "India, Brazil, Sri Lanka",
-        intents: ["energy","confidence","love","grounding"],
-        traditional_note: "Historically used across ancient Roman, medieval European, and South Asian cultures as a stone of vitality and devotion, documented in jewellery from Greco-Roman antiquity through the Victorian era.",
-        bracelet_look: "Deep burgundy-red translucent beads with a rich glassy depth — classic and refined on the wrist; suits darker skin tones and gold settings particularly well.",
-        authenticity_note: "Red glass and synthetic corundum are common substitutes for garnet; genuine garnet shows strong colour saturation with natural inclusions visible under magnification and no obvious signs of air bubbles that indicate glass.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a soft damp cloth; garnet is relatively durable but avoid ultrasonic cleaners which can damage included stones.",
-        pairs_with: ["rose_quartz","tigers_eye"], budget_tier: "mid",
-        etsy_search: "genuine garnet bracelet natural deep red"
-      },
-      {
-        id: "pyrite", name: "Pyrite", hex: "#C9A82C",
-        colour_desc: "Metallic golden yellow with a brassy, mirror-like lustre and natural cubic or irregular crystal faces.",
-        hardness: 6.5, price_range: "Rs.300-1000 / $8-28", origin: "Spain, Peru, China",
-        intents: ["confidence","focus","positivity","energy"],
-        traditional_note: "Traditionally associated with wealth and mental sharpness across Andean, Spanish, and Asian cultures, with documented use by indigenous Andean peoples in decorative mirrors and ceremonial objects.",
-        bracelet_look: "Metallic golden beads with a bold mirror-like sheen — striking and unusual on the wrist; looks particularly effective in stacking combinations with darker stones.",
-        authenticity_note: "Brass-coated beads and gold-painted glass are common fakes; genuine pyrite has a distinctive metallic lustre with visible natural cubic crystal structure or rough natural surface texture — perfectly smooth and uniformly gold beads are usually not natural pyrite.",
-        water_safe: false, sun_fade: false,
-        care_tip: "Keep completely dry; pyrite will oxidise and tarnish with water exposure — wipe only with a dry soft cloth and store away from humidity.",
-        pairs_with: ["lapis_lazuli","obsidian"], budget_tier: "mid",
-        etsy_search: "genuine pyrite bracelet natural metallic"
-      },
-      {
-        id: "green_aventurine", name: "Green Aventurine", hex: "#4CAF72",
-        colour_desc: "Medium green with a sparkling shimmer caused by tiny reflective inclusions called aventurescence.",
-        hardness: 7, price_range: "Rs.200-600 / $5-18", origin: "India, Brazil, Tanzania",
-        intents: ["positivity","energy","creativity","gifting","grounding"],
-        traditional_note: "Traditionally associated with opportunity and optimism across Tibetan, Italian, and Chinese cultures, with documented decorative use spanning several centuries and historical association with good fortune in multiple traditions.",
-        bracelet_look: "Fresh medium-green beads with a subtle sparkle — uplifting and natural-looking on the wrist; one of the most universally wearable stone bracelets.",
-        authenticity_note: "Dyed glass and green-dyed quartz are common substitutes; genuine green aventurine has a distinctive subtle sparkle from its internal fuchsite inclusions — glass imitations lack this internal shimmer and appear flat under magnification.",
-        water_safe: true, sun_fade: false,
-        care_tip: "Wipe with a soft damp cloth and dry thoroughly; green aventurine is durable and low-maintenance for everyday wear.",
-        pairs_with: ["citrine","rose_quartz"], budget_tier: "budget",
-        etsy_search: "genuine green aventurine bracelet natural shimmer"
-      }
-    ];
-
-    // =========================================================
-    // STATE
-    // =========================================================
-    let selectedIntent = null;
-    let selectedGiftFor = null;
-    let selectedBudget = null;
-    let selectedColour = null;
-    let selectedZodiac = "none";
-
-    // =========================================================
-    // MAPPINGS
-    // =========================================================
-    const ZODIAC_MAP = {
-      Aries: "carnelian", Taurus: "rose_quartz", Gemini: "tigers_eye",
-      Cancer: "moonstone", Leo: "citrine", Virgo: "green_aventurine",
-      Libra: "lapis_lazuli", Scorpio: "obsidian", Sagittarius: "labradorite",
-      Capricorn: "garnet", Aquarius: "amethyst", Pisces: "aquamarine"
-    };
-
-    const INTENT_MAP = {
-      calm:       { p: "amethyst",         s: "aquamarine" },
-      stress:     { p: "amethyst",         s: "aquamarine" },
-      focus:      { p: "clear_quartz",     s: "lapis_lazuli" },
-      clarity:    { p: "clear_quartz",     s: "lapis_lazuli" },
-      confidence: { p: "tigers_eye",       s: "carnelian" },
-      grounding:  { p: "black_tourmaline", s: "obsidian" },
-      love:       { p: "rose_quartz",      s: "moonstone" },
-      relationships: { p: "rose_quartz",   s: "moonstone" },
-      creativity: { p: "labradorite",      s: "carnelian" },
-      positivity: { p: "citrine",          s: "green_aventurine" },
-      energy:     { p: "citrine",          s: "green_aventurine" },
-      protection: { p: "black_tourmaline", s: "obsidian" },
-      gifting:    { p: "rose_quartz",      s: "amethyst" }
-    };
-
-    const BUDGET_PREF = {
-      budget:  ["amethyst","carnelian","citrine","green_aventurine","clear_quartz","obsidian"],
-      mid:     ["tigers_eye","rose_quartz","lapis_lazuli","garnet","pyrite"],
-      premium: ["labradorite","moonstone","aquamarine","malachite"]
-    };
-
-    const COLOUR_PREF = {
-      cool:  ["amethyst","aquamarine","lapis_lazuli","moonstone"],
-      warm:  ["carnelian","citrine","tigers_eye","garnet"],
-      earthy:["black_tourmaline","obsidian","malachite","green_aventurine","tigers_eye"],
-      pale:  ["clear_quartz","moonstone","rose_quartz"]
-    };
-
-    // =========================================================
-    // HELPERS
-    // =========================================================
-    function getStone(id) {
-      return STONES.find(function(s) { return s.id === id; });
-    }
-
-    function pickSecondary(primaryId, intent, budget, colour) {
-      var candidates = [];
-
-      // Try colour filter first
-      if (colour && colour !== 'any' && COLOUR_PREF[colour]) {
-        candidates = COLOUR_PREF[colour].filter(function(id) { return id !== primaryId; });
-      }
-
-      // Apply budget filter to candidates or create budget list
-      if (budget && budget !== 'any' && BUDGET_PREF[budget]) {
-        var budgetList = BUDGET_PREF[budget];
-        if (candidates.length > 0) {
-          var overlap = candidates.filter(function(id) { return budgetList.indexOf(id) !== -1; });
-          if (overlap.length > 0) candidates = overlap;
-        } else {
-          candidates = budgetList.filter(function(id) { return id !== primaryId; });
-        }
-      }
-
-      // Find first valid candidate that exists in STONES
-      for (var i = 0; i < candidates.length; i++) {
-        if (candidates[i] !== primaryId && getStone(candidates[i])) {
-          return candidates[i];
-        }
-      }
-
-      // Fall back to intent baseline
-      var baseline = INTENT_MAP[intent];
-      if (baseline && baseline.s !== primaryId) return baseline.s;
-      if (baseline && baseline.p !== primaryId) return baseline.p;
-      return primaryId === "amethyst" ? "rose_quartz" : "amethyst";
-    }
-
-    function buildStoneCard(stone, isPrimary) {
-      var badgeLabel = isPrimary ? "Best match" : "Also consider";
-      var waterText = stone.water_safe ? "✓ Water safe" : "✗ Keep dry";
-      var sunText = stone.sun_fade ? "✗ Avoid direct sun" : "✓ Sun safe";
-      return '<span class="match-badge">' + badgeLabel + '</span>' +
-        '<div style="width:64px;height:64px;border-radius:50%;background-color:' + stone.hex + ';border:1px solid #E8E3DC;"></div>' +
-        '<p class="result-stone-name">' + stone.name + '</p>' +
-        '<p class="result-note">' + stone.traditional_note + '</p>' +
-        '<div class="info-badges">' +
-          '<span class="info-badge">Hardness ' + stone.hardness + '</span>' +
-          '<span class="info-badge">' + stone.price_range + '</span>' +
-          '<span class="info-badge">' + stone.origin + '</span>' +
-        '</div>' +
-        '<div class="auth-box">' +
-          '<p class="auth-label">Authenticity note</p>' +
-          '<p class="auth-text">' + stone.authenticity_note + '</p>' +
-        '</div>' +
-        '<div class="care-row">' +
-          '<span class="care-item">' + waterText + '</span>' +
-          '<span class="care-item">' + sunText + '</span>' +
-          '<span class="care-item">Care: ' + stone.care_tip + '</span>' +
-        '</div>' +
-        '<div class="card-actions">' +
-          '<!-- AFFILIATE: Conscious Items | ' + stone.name + ' bracelet | 20% commission -->' +
-          '<a href="#" class="btn-primary">Where to buy</a>' +
-          '<a href="/stones/' + stone.id.replace(/_/g,'-') + '.html" class="btn-secondary">Full guide</a>' +
-        '</div>';
-    }
-
-    function buildComboBox(primary, secondary) {
-      var pairsWithSecondary = primary.pairs_with && primary.pairs_with.indexOf(secondary.id) !== -1;
-      var reason = pairsWithSecondary
-        ? primary.name + ' and ' + secondary.name + ' are a noted stacking pair — the contrast in colour and texture works particularly well together on the wrist.'
-        : primary.name + ' and ' + secondary.name + ' complement each other thematically, both with historical associations that align with your selected intent.';
-      return '<p class="combo-label">Suggested stack combination</p>' +
-        '<div class="combo-stones">' +
-          '<div class="combo-circle" style="background-color:' + primary.hex + ';border:1px solid #E8E3DC;"></div>' +
-          '<span class="combo-plus">+</span>' +
-          '<div class="combo-circle" style="background-color:' + secondary.hex + ';border:1px solid #E8E3DC;"></div>' +
-        '</div>' +
-        '<p class="combo-names">' + primary.name + ' + ' + secondary.name + '</p>' +
-        '<p class="combo-reason">' + reason + '</p>' +
-        '<!-- AFFILIATE: Etsy via Awin | ' + primary.name + ' + ' + secondary.name + ' bracelet stack | 4% commission -->' +
-        '<a href="#" class="btn-primary">Shop this combination</a>';
-    }
-
-    function showResults() {
-      var map = INTENT_MAP[selectedIntent];
-      if (!map) return;
-
-      // Determine primary — zodiac can influence
-      var primaryId = map.p;
-      if (selectedZodiac && selectedZodiac !== 'none') {
-        var zodiacStone = ZODIAC_MAP[selectedZodiac];
-        if (zodiacStone && zodiacStone !== primaryId) {
-          // Use zodiac as a tiebreaker only if it matches intent candidates
-          var intentStones = STONES.filter(function(s) {
-            return s.intents && s.intents.indexOf(selectedIntent) !== -1;
-          }).map(function(s){ return s.id; });
-          if (intentStones.indexOf(zodiacStone) !== -1) {
-            primaryId = zodiacStone;
-          }
-        }
-      }
-
-      var secondaryId = pickSecondary(primaryId, selectedIntent, selectedBudget, selectedColour);
-      var primary = getStone(primaryId);
-      var secondary = getStone(secondaryId);
-      if (!primary) primary = getStone(map.p);
-      if (!secondary) secondary = getStone(map.s);
-
-      document.getElementById('primary-result').innerHTML = buildStoneCard(primary, true);
-      document.getElementById('secondary-result').innerHTML = buildStoneCard(secondary, false);
-      document.getElementById('combo-box').innerHTML = buildComboBox(primary, secondary);
-
-      var summaryParts = ['Intent: ' + selectedIntent];
-      if (selectedBudget) summaryParts.push('Budget: ' + selectedBudget);
-      if (selectedColour) summaryParts.push('Colour: ' + selectedColour);
-      document.getElementById('summary-2-text').textContent = summaryParts.join(' · ');
-      document.getElementById('summary-2').classList.add('visible');
-
-      document.getElementById('step-2').classList.remove('visible');
-      document.getElementById('results-section').classList.add('visible');
-      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // =========================================================
-    // EVENT LISTENERS
-    // =========================================================
-    document.addEventListener('DOMContentLoaded', function() {
-
-      // Hamburger
-      var hamburger = document.getElementById('hamburger');
-      var navMobile = document.getElementById('nav-mobile');
-      hamburger.addEventListener('click', function() {
-        navMobile.classList.toggle('open');
-      });
-
-      // Intent cards
-      var intentCards = document.querySelectorAll('.finder-intent-card');
-      intentCards.forEach(function(card) {
-        card.addEventListener('click', function() {
-          intentCards.forEach(function(c) { c.classList.remove('selected'); });
-          card.classList.add('selected');
-          selectedIntent = card.getAttribute('data-intent');
-
-          // Show gifting sub-question
-          var giftSub = document.getElementById('gifting-sub');
-          if (selectedIntent === 'gifting') {
-            giftSub.classList.add('visible');
-          } else {
-            giftSub.classList.remove('visible');
-            selectedGiftFor = null;
-          }
-
-          document.getElementById('continue-btn').classList.add('enabled');
-        });
-      });
-
-      // Gifting sub pills
-      var giftPills = document.querySelectorAll('#gift-pills .pill');
-      giftPills.forEach(function(pill) {
-        pill.addEventListener('click', function() {
-          giftPills.forEach(function(p) { p.classList.remove('selected'); });
-          pill.classList.add('selected');
-          selectedGiftFor = pill.getAttribute('data-gift');
-        });
-      });
-
-      // Continue button
-      document.getElementById('continue-btn').addEventListener('click', function() {
-        if (!selectedIntent) return;
-        document.getElementById('step-1').style.display = 'none';
-        var intentLabel = document.querySelector('.finder-intent-card.selected .intent-label');
-        document.getElementById('summary-intent-text').textContent = 'Looking for: ' + (intentLabel ? intentLabel.textContent : selectedIntent);
-        document.getElementById('summary-1').classList.add('visible');
-        document.getElementById('step-2').classList.add('visible');
-        document.getElementById('step-indicator').textContent = 'Step 2 of 2';
-        document.getElementById('step-2').scrollIntoView({ behavior: 'smooth' });
-      });
-
-      // Edit intent link
-      document.getElementById('edit-intent').addEventListener('click', function() {
-        document.getElementById('step-1').style.display = 'block';
-        document.getElementById('step-2').classList.remove('visible');
-        document.getElementById('results-section').classList.remove('visible');
-        document.getElementById('summary-1').classList.remove('visible');
-        document.getElementById('summary-2').classList.remove('visible');
-        document.getElementById('step-indicator').textContent = 'Step 1 of 2';
-        document.getElementById('step-1').scrollIntoView({ behavior: 'smooth' });
-      });
-
-      // Edit all link
-      document.getElementById('edit-all').addEventListener('click', function() {
-        document.getElementById('step-1').style.display = 'block';
-        document.getElementById('step-2').classList.add('visible');
-        document.getElementById('results-section').classList.remove('visible');
-        document.getElementById('summary-2').classList.remove('visible');
-        document.getElementById('step-2').scrollIntoView({ behavior: 'smooth' });
-      });
-
-      // Filter pills (budget, style, colour)
-      var filterPills = document.querySelectorAll('.pill[data-filter]');
-      filterPills.forEach(function(pill) {
-        pill.addEventListener('click', function() {
-          var filterType = pill.getAttribute('data-filter');
-          var group = document.querySelectorAll('.pill[data-filter="' + filterType + '"]');
-          group.forEach(function(p) { p.classList.remove('selected'); });
-          pill.classList.add('selected');
-          var val = pill.getAttribute('data-value');
-          if (filterType === 'budget') selectedBudget = val;
-          if (filterType === 'colour') selectedColour = val;
-        });
-      });
-
-      // Zodiac select
-      document.getElementById('zodiac-select').addEventListener('change', function() {
-        selectedZodiac = this.value;
-      });
-
-      // Find button
-      document.getElementById('find-btn').addEventListener('click', showResults);
-
-      // Reset button
-      document.getElementById('reset-btn').addEventListener('click', function() {
-        selectedIntent = null;
-        selectedGiftFor = null;
-        selectedBudget = null;
-        selectedColour = null;
-        selectedZodiac = 'none';
-
-        intentCards.forEach(function(c) { c.classList.remove('selected'); });
-        filterPills.forEach(function(p) { p.classList.remove('selected'); });
-        giftPills.forEach(function(p) { p.classList.remove('selected'); });
-        document.getElementById('zodiac-select').value = 'none';
-        document.getElementById('continue-btn').classList.remove('enabled');
-        document.getElementById('gifting-sub').classList.remove('visible');
-
-        document.getElementById('step-1').style.display = 'block';
-        document.getElementById('step-2').classList.remove('visible');
-        document.getElementById('results-section').classList.remove('visible');
-        document.getElementById('summary-1').classList.remove('visible');
-        document.getElementById('summary-2').classList.remove('visible');
-        document.getElementById('step-indicator').textContent = 'Step 1 of 2';
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      // Copy button
-      document.getElementById('copy-btn').addEventListener('click', function() {
-        var primaryName = document.querySelector('#primary-result .result-stone-name');
-        var primaryNote = document.querySelector('#primary-result .result-note');
-        var secondaryName = document.querySelector('#secondary-result .result-stone-name');
-        var secondaryNote = document.querySelector('#secondary-result .result-note');
-        if (!primaryName) return;
-
-        var text = 'My Gem Intent Stone Matches\n\n' +
-          'Best match: ' + primaryName.textContent + '\n' +
-          (primaryNote ? primaryNote.textContent + '\n\n' : '\n') +
-          'Also consider: ' + (secondaryName ? secondaryName.textContent : '') + '\n' +
-          (secondaryNote ? secondaryNote.textContent : '') + '\n\n' +
-          'Find yours at gemintent.com/finder/';
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(function() {
-            var btn = document.getElementById('copy-btn');
-            btn.textContent = 'Copied!';
-            setTimeout(function() { btn.textContent = 'Copy result'; }, 2000);
-          });
-        }
-      });
-
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9PVJ1NBPWG');
   </script>
+</head>
+<body class="">
+
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html" aria-label="Gem Intent home">
+      <img src="assets/img/logo-mark.svg" alt="" width="28" height="28">
+      <span>Gem Intent</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="finder.html" aria-current="page">Finder</a>
+      <a href="stones/index.html">Featured stones</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="finder.html">Open Stone Finder</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="finder.html" aria-current="page">Finder</a>
+    <a href="stones/index.html">Featured stones</a>
+    <a href="guides/index.html">Guides</a>
+    <a href="about.html">About</a>
+    <a class="btn btn-primary mobile-nav-cta" href="finder.html">Open Stone Finder</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">2026 finder update · required-step flow</div>
+      <h1>Find a better stone match before you start shopping.</h1>
+      <p>The result stays hidden until you complete the required choices. That keeps the recommendation more intentional, easier to trust, and more useful to share.</p>
+    </div>
+  </section>
+
+  <section class="section section-top-tight">
+    <div class="container finder-shell">
+      <div class="tool-card">
+        <form id="finderForm" novalidate>
+          <div class="form-step-grid">
+            <div class="form-step">
+              <div class="step-label"><strong>1. What do you want most?</strong><span>Required</span></div>
+              <div class="chip-grid">
+                <button class="select-chip" type="button" data-intent="calm">Calm</button>
+                <button class="select-chip" type="button" data-intent="sleep">Better sleep</button>
+                <button class="select-chip" type="button" data-intent="focus">Focus</button>
+                <button class="select-chip" type="button" data-intent="confidence">Confidence</button>
+                <button class="select-chip" type="button" data-intent="grounding">Grounding</button>
+                <button class="select-chip" type="button" data-intent="love">Love</button>
+                <button class="select-chip" type="button" data-intent="creativity">Creativity</button>
+                <button class="select-chip" type="button" data-intent="positivity">Positivity</button>
+                <button class="select-chip" type="button" data-intent="energy">Energy</button>
+                <button class="select-chip" type="button" data-intent="protection">Protection</button>
+                <button class="select-chip" type="button" data-intent="gifting">Giftability</button>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="step-label"><strong>2. How will you use it?</strong><span>Required</span></div>
+              <div class="chip-grid">
+                <button class="select-chip" type="button" data-use="daily">Wear it daily</button>
+                <button class="select-chip" type="button" data-use="gift">Gift it</button>
+                <button class="select-chip" type="button" data-use="nearby">Keep it nearby</button>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="step-label"><strong>3. What budget comfort feels right?</strong><span>Required</span></div>
+              <div class="chip-grid">
+                <button class="select-chip" type="button" data-budget="budget">Value-minded</button>
+                <button class="select-chip" type="button" data-budget="mid">Balanced</button>
+                <button class="select-chip" type="button" data-budget="premium">Premium</button>
+                <button class="select-chip" type="button" data-budget="any">Open budget</button>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="step-label"><strong>4. Which visual direction do you prefer?</strong><span>Required</span></div>
+              <div class="chip-grid">
+                <button class="select-chip" type="button" data-look="soft">Soft and minimal</button>
+                <button class="select-chip" type="button" data-look="warm">Warm and golden</button>
+                <button class="select-chip" type="button" data-look="earthy">Earthy and grounding</button>
+                <button class="select-chip" type="button" data-look="bold">Bold and statement-led</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step form-step-optional">
+            <div class="step-label"><strong>5. Birth date or zodiac sign</strong><span>Optional</span></div>
+            <p class="step-optional-note">Adding this gives the finder a small extra signal. It does not override your intent — it helps break ties between equally good matches.</p>
+            <div class="birth-input-row">
+              <div class="birth-option">
+                <label class="birth-label" for="birthDateInput">Enter your birth date</label>
+                <input type="date" id="birthDateInput" class="birth-date-input" placeholder="dd/mm/yyyy" max="2010-12-31" min="1930-01-01">
+                <span class="birth-hint" id="birthDateHint"></span>
+              </div>
+              <div class="birth-divider">or</div>
+              <div class="birth-option">
+                <label class="birth-label">Select your zodiac sign</label>
+                <div class="zodiac-grid" id="zodiacGrid">
+                  <button class="zodiac-chip" type="button" data-sign="Aries" title="Mar 21 – Apr 19">&#9800; Aries</button>
+                  <button class="zodiac-chip" type="button" data-sign="Taurus" title="Apr 20 – May 20">&#9801; Taurus</button>
+                  <button class="zodiac-chip" type="button" data-sign="Gemini" title="May 21 – Jun 20">&#9802; Gemini</button>
+                  <button class="zodiac-chip" type="button" data-sign="Cancer" title="Jun 21 – Jul 22">&#9803; Cancer</button>
+                  <button class="zodiac-chip" type="button" data-sign="Leo" title="Jul 23 – Aug 22">&#9804; Leo</button>
+                  <button class="zodiac-chip" type="button" data-sign="Virgo" title="Aug 23 – Sep 22">&#9805; Virgo</button>
+                  <button class="zodiac-chip" type="button" data-sign="Libra" title="Sep 23 – Oct 22">&#9806; Libra</button>
+                  <button class="zodiac-chip" type="button" data-sign="Scorpio" title="Oct 23 – Nov 21">&#9807; Scorpio</button>
+                  <button class="zodiac-chip" type="button" data-sign="Sagittarius" title="Nov 22 – Dec 21">&#9808; Sagittarius</button>
+                  <button class="zodiac-chip" type="button" data-sign="Capricorn" title="Dec 22 – Jan 19">&#9809; Capricorn</button>
+                  <button class="zodiac-chip" type="button" data-sign="Aquarius" title="Jan 20 – Feb 18">&#9810; Aquarius</button>
+                  <button class="zodiac-chip" type="button" data-sign="Pisces" title="Feb 19 – Mar 20">&#9811; Pisces</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="finder-status">
+            <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="finderProgressBar"></div></div>
+            <div class="finder-note" id="finderStatusText">Complete 0 of 4 required choices to unlock your result.</div>
+            <div class="finder-actions">
+              <button class="btn btn-primary" id="showResultBtn" type="button" disabled>Show my best match</button>
+              <button class="btn btn-secondary" id="resetFinderBtn" type="button">Reset</button>
+            </div>
+          </div>
+        </form>
+
+        <p class="finder-note" id="finderSummary" style="margin-top:14px">Choose your goal, how you will use the stone, your budget comfort, and the look you prefer.</p>
+
+        <div class="result-shell" id="resultShell">
+          <article class="result-card">
+            <div class="result-top">
+              <div class="result-art" id="resultArt"></div>
+              <div>
+                <div class="result-headline">
+                  <h2 id="resultTitle"></h2>
+                  <span class="badge">2026 recommendation</span>
+                </div>
+                <p class="result-sub" id="resultLead"></p>
+                <div class="result-why" id="resultWhy"></div>
+              </div>
+            </div>
+            <div class="result-grid">
+              <div class="detail-card" id="resultReason"></div>
+              <div class="detail-card" id="resultBuying"></div>
+              <div class="detail-card" id="resultCare"></div>
+              <div class="detail-card" id="resultNext"></div>
+            </div>
+
+            <div class="next-step">
+              <h3>Next: choose the format you want to explore.</h3>
+              <p>This is where the recommendation becomes more useful. The same stone can be a better buy as a bracelet, ring, pendant, or loose piece depending on wear habits and gift intent.</p>
+              <div class="format-grid" id="formatSelector">
+                <button class="format-chip" type="button" data-format="bracelet">Bracelet</button>
+                <button class="format-chip" type="button" data-format="ring">Ring</button>
+                <button class="format-chip" type="button" data-format="pendant">Pendant</button>
+                <button class="format-chip" type="button" data-format="loose">Loose stone</button>
+              </div>
+              <div class="format-note" id="formatNote">Choose a format to see what makes the most sense for the recommended stone.</div>
+            </div>
+
+            <div class="result-actions-row">
+              <a class="btn btn-primary" id="resultRead" href="#">Read the full guide</a>
+              <a class="btn btn-tertiary" id="whatsappShareBtn" href="#" target="_blank" rel="noopener">Share to WhatsApp</a>
+              <button class="btn btn-secondary" id="copyLinkBtn" type="button">Copy result link</button>
+            </div>
+
+            <div class="secondary-grid">
+              <div class="secondary-card" id="backupOne"></div>
+              <div class="secondary-card" id="backupTwo"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="side-points">
+        <div class="card">
+          <span class="card-label">How it works</span>
+          <h3>Your result unlocks after four choices.</h3>
+          <p>Pick your goal, how you will use the stone, your budget comfort, and the visual direction you prefer. The recommendation only appears once all four are set — so the match is intentional, not random.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Honest about what stones are</span>
+          <h3>Cultural tradition, not medical advice.</h3>
+          <p>Stone associations on this site are drawn from documented historical and cultural use. The finder helps you find a stone that fits your intent and style — it does not make health, therapeutic, or outcome claims.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">After your result</span>
+          <h3>The stone guide tells you what to check before buying.</h3>
+          <p>Each result links to a full stone guide covering how it looks as a bracelet, how to spot fakes, care notes, and where to find genuine versions from reputable sellers.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="ad-slot" aria-hidden="true"></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card"><span class="card-label">First-time buyer?</span><h3>Start from a feeling — no gem knowledge needed.</h3><p>You do not need to know stone names, bead grades, or mineral families. Just pick the intent that feels relevant and the tool does the rest.</p></div>
+        <div class="card"><span class="card-label">Buying for someone else?</span><h3>Share your result on WhatsApp before you buy.</h3><p>The result link preserves your selections so the other person can see exactly which stone came up and why — useful if you want a second opinion before purchasing.</p></div>
+        <div class="card"><span class="card-label">Not sure yet?</span><h3>The result is a starting point, not a final answer.</h3><p>Open the full stone guide from your result to read buying notes, authenticity checks, and care details before you commit to any listing.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-copy">© 2026 Gem Intent</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="how-we-calculate.html">How we calculate</a>
+        <a href="editorial-policy.html">Editorial policy</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      Some links on this site may earn a commission at no extra cost to you. That never changes how we describe a stone, score the finder, or write a guide.
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/finder.js"></script>
 </body>
 </html>

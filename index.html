@@ -3,503 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gem Intent — Find the Right Semi-Precious Stone for Your Intent</title>
-  <meta name="description" content="Find the right semi-precious stone bracelet for your goals. Research-backed shopping guidance. Use the free Stone Finder tool — filter by intent, budget, and style.">
+  <title>Gem Intent — Find the Right Stone by Intent, Budget, and Style in 2026</title>
+  <meta name="description" content="Use Gem Intent to narrow down stones by intent, gifting use, budget comfort, and look. Built for mobile, grounded in practicality, and updated for 2026.">
   <link rel="canonical" href="https://gemintent.com/">
-  <meta property="og:title" content="Gem Intent — Find the Right Semi-Precious Stone">
-  <meta property="og:description" content="Research-backed shopping guidance for semi-precious stone bracelets.">
+  <meta property="og:title" content="Gem Intent — Find the Right Stone by Intent, Budget, and Style in 2026">
+  <meta property="og:description" content="Use Gem Intent to narrow down stones by intent, gifting use, budget comfort, and look. Built for mobile, grounded in practicality, and updated for 2026.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Gem Intent">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #FAF8F5; color: #1C1C1A; line-height: 1.6; }
-    img { max-width: 100%; display: block; }
-    a { color: #3D2B55; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; z-index: 100; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-    .nav-links a:hover { color: #3D2B55; }
-    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-mobile { display: none; flex-direction: column; background: #FFFFFF; border-bottom: 1px solid #E8E3DC; padding: 16px 24px; gap: 16px; }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: #1C1C1A; text-decoration: none; }
-
-    /* HERO */
-    .hero { background: #FAF8F5; padding: 80px 24px; text-align: center; }
-    .hero-eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B8924A; margin-bottom: 12px; }
-    .hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 52px; color: #3D2B55; font-weight: 500; line-height: 1.2; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .hero-sub { font-size: 17px; color: #666666; max-width: 500px; margin: 0 auto 32px; }
-    .hero-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .hero-pill { background: #FFFFFF; border: 1px solid #E8E3DC; color: #1C1C1A; border-radius: 24px; padding: 8px 20px; font-size: 14px; cursor: pointer; transition: border-color 0.2s; font-family: 'Inter', system-ui, sans-serif; }
-    .hero-pill:hover { border-color: #3D2B55; }
-
-    /* SECTIONS */
-    .section { padding: 64px 24px; }
-    .section-eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B8924A; text-align: center; margin-bottom: 8px; }
-    .section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; color: #3D2B55; font-weight: 500; text-align: center; margin-bottom: 8px; }
-    .section-sub { font-size: 14px; color: #666666; text-align: center; margin-bottom: 40px; }
-
-    /* INTENT GRID */
-    .intent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 860px; margin: 0 auto 32px; }
-    .intent-card { background: #FFFFFF; border: 1px solid #E8E3DC; border-radius: 10px; padding: 20px 16px; cursor: pointer; transition: all 0.2s; min-height: 90px; display: flex; flex-direction: column; justify-content: center; width: 100%; font-family: 'Inter', system-ui, sans-serif; text-align: left; }
-    .intent-card:hover { border-color: #B8924A; transform: translateY(-2px); }
-    .intent-card.selected { border-color: #3D2B55; background: #FAF8F5; }
-    .intent-label { font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 14px; color: #1C1C1A; margin-bottom: 4px; }
-    .intent-desc { font-size: 12px; color: #666666; }
-
-    /* RESULTS */
-    .results-area { max-width: 860px; margin: 0 auto; display: none; }
-    .results-area.visible { display: block; }
-    .results-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; color: #3D2B55; font-weight: 500; margin-bottom: 16px; }
-    .result-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-    .result-card { background: #FFFFFF; border: 1px solid #E8E3DC; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    .stone-circle { border-radius: 50%; flex-shrink: 0; width: 56px; height: 56px; }
-    .stone-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; color: #3D2B55; font-weight: 500; }
-    .stone-note { font-size: 13px; color: #666666; font-style: italic; line-height: 1.5; }
-    .price-badge { display: inline-block; background: #3D2B55; color: #FFFFFF; font-size: 10px; border-radius: 12px; padding: 3px 10px; width: fit-content; }
-    .result-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
-    .btn-primary { background: #3D2B55; color: #FFFFFF; border: none; border-radius: 6px; padding: 9px 18px; font-size: 13px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; text-decoration: none; display: inline-block; }
-    .btn-primary:hover { text-decoration: none; opacity: 0.9; }
-    .btn-secondary { background: transparent; border: 1px solid #3D2B55; color: #3D2B55; border-radius: 6px; padding: 9px 18px; font-size: 13px; cursor: pointer; font-family: 'Inter', system-ui, sans-serif; text-decoration: none; display: inline-block; }
-    .btn-secondary:hover { text-decoration: none; background: #FAF8F5; }
-    .finder-more { text-align: center; margin-top: 8px; font-size: 14px; color: #3D2B55; }
-
-    /* STONE GRID */
-    .stone-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; }
-    .stone-card { background: #FFFFFF; border: 1px solid #E8E3DC; border-radius: 10px; overflow: hidden; cursor: pointer; transition: all 0.2s; text-decoration: none; display: block; border-left: 3px solid transparent; }
-    .stone-card:hover { transform: translateY(-2px); border-left-color: #B8924A; text-decoration: none; }
-    .stone-colour-block { width: 100%; height: 120px; }
-    .stone-card-info { padding: 14px; }
-    .stone-card-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; color: #3D2B55; font-weight: 500; margin-bottom: 4px; }
-    .stone-card-desc { font-size: 12px; color: #666666; }
-
-    /* TRUST STRIP */
-    .trust-strip { background: #F0EDE8; padding: 16px 24px; text-align: center; font-size: 12px; color: #666666; }
-
-    /* ARTICLES */
-    .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
-    .article-card { background: #FFFFFF; border: 1px solid #E8E3DC; border-radius: 10px; padding: 20px; transition: all 0.2s; border-left: 3px solid transparent; }
-    .article-card:hover { border-left-color: #B8924A; transform: translateY(-2px); }
-    .category-tag { display: inline-block; font-size: 10px; font-weight: 500; text-transform: uppercase; border-radius: 4px; padding: 3px 8px; margin-bottom: 10px; }
-    .article-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: #3D2B55; font-weight: 500; margin-bottom: 8px; line-height: 1.3; }
-    .article-desc { font-size: 13px; color: #666666; line-height: 1.5; margin-bottom: 12px; }
-    .article-read { font-size: 13px; color: #B8924A; text-decoration: none; }
-    .article-read:hover { text-decoration: underline; }
-
-    /* AD PLACEHOLDER */
-    .ad-placeholder { width: 100%; max-width: 728px; height: 90px; background: #F5F5F3; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #aaa; border: 0.5px solid #E8E3DC; margin: 24px auto; }
-
-    /* FOOTER */
-    footer { background: #3D2B55; padding: 40px 24px; color: rgba(255,255,255,0.7); }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; }
-    footer a { color: #B8924A; text-decoration: none; }
-    footer a:hover { color: #FFFFFF; }
-    .footer-disclosure { max-width: 1100px; margin: 0 auto; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .intent-grid { grid-template-columns: 1fr 1fr; }
-      .result-cards { grid-template-columns: 1fr; }
-      .stone-grid { grid-template-columns: 1fr 1fr; }
-      .article-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 34px; }
-      .footer-inner { flex-direction: column; gap: 20px; }
-    }
-    @media (max-width: 480px) {
-      .intent-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="12,2 22,8 18,21 6,21 2,8" stroke="#3D2B55" stroke-width="1.5" fill="none"/>
-      </svg>
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:#3D2B55;font-weight:500;margin-left:8px;">Gem Intent</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#">Stones</a></li>
-      <li><a href="finder.html">Find My Stone</a></li>
-      <li><a href="#">Gifts</a></li>
-      <li><a href="#">Authenticity</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0" width="22" height="2" fill="#3D2B55"/>
-        <rect y="7" width="22" height="2" fill="#3D2B55"/>
-        <rect y="14" width="22" height="2" fill="#3D2B55"/>
-      </svg>
-    </button>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="#">Stones</a>
-    <a href="finder.html">Find My Stone</a>
-    <a href="#">Gifts</a>
-    <a href="#">Authenticity</a>
-  </div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="container">
-      <p class="hero-eyebrow">Semi-Precious Stone Guide</p>
-      <h1>Find the right stone for your intent</h1>
-      <p class="hero-sub">Research-backed guidance for buying semi-precious stone bracelets. Informational, practical, and jargon-free.</p>
-      <div class="hero-pills">
-        <button class="hero-pill" onclick="document.getElementById('finder-section').scrollIntoView({behavior:'smooth'})">Find by intent</button>
-        <button class="hero-pill" onclick="document.getElementById('stone-grid-section').scrollIntoView({behavior:'smooth'})">Browse all stones</button>
-        <button class="hero-pill" onclick="window.location.href='finder.html'">Full stone finder tool</button>
-      </div>
-      <div class="ad-placeholder" id="ad-hero">Advertisement</div>
-    </div>
-  </div>
-
-  <!-- MINI STONE FINDER -->
-  <section class="section" id="finder-section" style="background:#FFFFFF;">
-    <div class="container">
-      <p class="section-eyebrow">Stone Finder</p>
-      <h2>What are you looking for?</h2>
-      <p class="section-sub">Select a theme and we will suggest matching stones.</p>
-
-      <div class="intent-grid">
-        <button class="intent-card" data-intent="calm">
-          <span class="intent-label">Calm and stress relief</span>
-          <span class="intent-desc">Quieten overthinking, find stillness</span>
-        </button>
-        <button class="intent-card" data-intent="focus">
-          <span class="intent-label">Focus and clarity</span>
-          <span class="intent-desc">Sharper thinking, less distraction</span>
-        </button>
-        <button class="intent-card" data-intent="confidence">
-          <span class="intent-label">Confidence</span>
-          <span class="intent-desc">Self-assurance and speaking up</span>
-        </button>
-        <button class="intent-card" data-intent="grounding">
-          <span class="intent-label">Grounding</span>
-          <span class="intent-desc">Feeling centred and stable</span>
-        </button>
-        <button class="intent-card" data-intent="love">
-          <span class="intent-label">Love and relationships</span>
-          <span class="intent-desc">Connection, warmth, openness</span>
-        </button>
-        <button class="intent-card" data-intent="creativity">
-          <span class="intent-label">Creativity</span>
-          <span class="intent-desc">Fresh ideas and artistic flow</span>
-        </button>
-        <button class="intent-card" data-intent="positivity">
-          <span class="intent-label">Positivity and energy</span>
-          <span class="intent-desc">Lift your mood and motivation</span>
-        </button>
-        <button class="intent-card" data-intent="protection">
-          <span class="intent-label">Protection</span>
-          <span class="intent-desc">Boundaries and feeling secure</span>
-        </button>
-        <button class="intent-card" data-intent="gifting">
-          <span class="intent-label">Gifting</span>
-          <span class="intent-desc">The right stone for someone else</span>
-        </button>
-      </div>
-
-      <div class="results-area" id="results-area">
-        <h3 class="results-heading">Your matches</h3>
-        <div class="result-cards" id="result-cards"></div>
-        <p class="finder-more">Want more options? <a href="finder.html">Use the full Stone Finder →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- STONE GRID -->
-  <section class="section" id="stone-grid-section" style="background:#FAF8F5;">
-    <div class="container">
-      <p class="section-eyebrow">Explore</p>
-      <h2>Browse by stone</h2>
-      <div class="stone-grid">
-        <a href="/stones/amethyst.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#9B59B6;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Amethyst</p>
-            <p class="stone-card-desc">Calm, clarity, rest</p>
-          </div>
-        </a>
-        <a href="/stones/rose-quartz.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#F4C2C2;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Rose Quartz</p>
-            <p class="stone-card-desc">Love, warmth, connection</p>
-          </div>
-        </a>
-        <a href="/stones/tigers-eye.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#B8860B;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Tiger's Eye</p>
-            <p class="stone-card-desc">Confidence, focus, courage</p>
-          </div>
-        </a>
-        <a href="/stones/black-tourmaline.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#1C1C1C;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Black Tourmaline</p>
-            <p class="stone-card-desc">Protection, grounding, strength</p>
-          </div>
-        </a>
-        <a href="/stones/citrine.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#E8A020;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Citrine</p>
-            <p class="stone-card-desc">Positivity, energy, joy</p>
-          </div>
-        </a>
-        <a href="/stones/labradorite.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#4682B4;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Labradorite</p>
-            <p class="stone-card-desc">Creativity, mystery, insight</p>
-          </div>
-        </a>
-        <a href="/stones/moonstone.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#E8E8F0;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Moonstone</p>
-            <p class="stone-card-desc">Intuition, calm, cycles</p>
-          </div>
-        </a>
-        <a href="/stones/clear-quartz.html" class="stone-card">
-          <div class="stone-colour-block" style="background-color:#F0F0F0;border-bottom:1px solid #E8E3DC;"></div>
-          <div class="stone-card-info">
-            <p class="stone-card-name">Clear Quartz</p>
-            <p class="stone-card-desc">Clarity, amplification, purpose</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST STRIP -->
-  <div class="trust-strip">
-    Research-backed &nbsp;·&nbsp; No medical claims &nbsp;·&nbsp; Authenticity guidance &nbsp;·&nbsp; Free to use
-  </div>
-
-  <!-- ARTICLE CARDS -->
-  <section class="section" style="background:#FFFFFF;">
-    <div class="container">
-      <p class="section-eyebrow">Learning</p>
-      <h2>From the guide</h2>
-      <p class="section-sub" style="margin-bottom:32px;">Practical, research-backed articles on buying, caring for, and gifting semi-precious stones.</p>
-      <div class="article-grid">
-        <div class="article-card">
-          <span class="category-tag" style="background:#FAEEDA;color:#633806;">Authenticity</span>
-          <p class="article-title">How to spot fake amethyst — 5 tests anyone can do</p>
-          <p class="article-desc">Dyed glass and synthetic stones are common online. Here is how to check before you buy.</p>
-          <a href="#" class="article-read">Read guide →</a>
-        </div>
-        <div class="article-card">
-          <span class="category-tag" style="background:#E6F1FB;color:#0C447C;">Buyer's Guide</span>
-          <p class="article-title">Best semi-precious bracelets for calm and focus</p>
-          <p class="article-desc">A practical comparison of popular stones and what to look for when buying.</p>
-          <a href="#" class="article-read">Read guide →</a>
-        </div>
-        <div class="article-card">
-          <span class="category-tag" style="background:#E1F5EE;color:#085041;">Gifting</span>
-          <p class="article-title">The skeptic's guide to gifting gemstone bracelets</p>
-          <p class="article-desc">You don't need to believe in crystals to give a meaningful gift. This guide is for you.</p>
-          <a href="#" class="article-read">Read guide →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span>© 2025 Gem Intent</span>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
-        <a href="#">Affiliate Disclosure</a>
-      </div>
-    </div>
-    <div class="footer-disclosure">
-      Some links on this site earn us a commission at no extra cost to you. This does not influence our recommendations.
-    </div>
-  </footer>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Gem Intent", "url": "https://gemintent.com", "description": "Gem Intent helps first-time buyers compare stones by intent, visual style, practicality, care, and budget without medical claims."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Gem Intent", "url": "https://gemintent.com"}</script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PVJ1NBPWG"></script>
   <script>
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMobile = document.getElementById('nav-mobile');
-    hamburger.addEventListener('click', function() {
-      navMobile.classList.toggle('open');
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9PVJ1NBPWG');
+  </script>
+</head>
+<body class="">
 
-    // Homepage stone data (only fields needed for this page)
-    const HOME_STONES = {
-      amethyst: {
-        id: "amethyst",
-        name: "Amethyst",
-        hex: "#9B59B6",
-        traditional_note: "Traditionally associated with clarity of thought and restraint across ancient Greek, Roman, and medieval European cultures.",
-        price_range: "Rs.300-800 / $8-22",
-        intents: ["calm", "stress", "clarity", "sleep", "gifting"]
-      },
-      aquamarine: {
-        id: "aquamarine",
-        name: "Aquamarine",
-        hex: "#7EC8E3",
-        traditional_note: "Traditionally associated with clarity and calm across ancient Roman, Greek, and seafaring cultures, where sailors historically carried it as a protective talisman.",
-        price_range: "Rs.800-3500 / $22-95",
-        intents: ["calm", "clarity", "stress", "gifting"]
-      },
-      clear_quartz: {
-        id: "clear_quartz",
-        name: "Clear Quartz",
-        hex: "#F0F0F0",
-        traditional_note: "Historically used across cultures as a symbol of clarity and purpose, with documented use in ancient Greek, Celtic, and Japanese traditions.",
-        price_range: "Rs.200-600 / $5-18",
-        intents: ["clarity", "focus", "energy", "gifting"]
-      },
-      lapis_lazuli: {
-        id: "lapis_lazuli",
-        name: "Lapis Lazuli",
-        hex: "#1A3A6B",
-        traditional_note: "Historically used across ancient Egyptian, Mesopotamian, and Renaissance European cultures as one of the most prized ornamental stones.",
-        price_range: "Rs.400-1500 / $12-42",
-        intents: ["focus", "clarity", "confidence", "creativity"]
-      },
-      tigers_eye: {
-        id: "tigers_eye",
-        name: "Tiger's Eye",
-        hex: "#B8860B",
-        traditional_note: "Historically used across cultures for courage and clear perception, with documented use in ancient Roman military contexts.",
-        price_range: "Rs.250-700 / $7-20",
-        intents: ["confidence", "focus", "clarity", "grounding", "energy"]
-      },
-      carnelian: {
-        id: "carnelian",
-        name: "Carnelian",
-        hex: "#E85D26",
-        traditional_note: "Historically used across ancient Egyptian, Roman, and Islamic cultures as a stone of courage and eloquence, with documented use in signet rings across several millennia.",
-        price_range: "Rs.250-700 / $7-20",
-        intents: ["confidence", "creativity", "energy", "positivity"]
-      },
-      black_tourmaline: {
-        id: "black_tourmaline",
-        name: "Black Tourmaline",
-        hex: "#1C1C1C",
-        traditional_note: "Historically used across cultures as a protective stone, with documented use in shamanic traditions across multiple continents.",
-        price_range: "Rs.350-900 / $10-25",
-        intents: ["protection", "grounding", "stress", "calm"]
-      },
-      rose_quartz: {
-        id: "rose_quartz",
-        name: "Rose Quartz",
-        hex: "#F4C2C2",
-        traditional_note: "Historically used across cultures as a symbol of warmth and connection, with documented use in ancient Egyptian and Roman jewellery.",
-        price_range: "Rs.300-900 / $8-25",
-        intents: ["love", "relationships", "calm", "gifting", "positivity"]
-      },
-      moonstone: {
-        id: "moonstone",
-        name: "Moonstone",
-        hex: "#E8E8F0",
-        traditional_note: "Historically associated with cycles and intuition across South Asian, Roman, and Greek traditions, where it was linked to the moon.",
-        price_range: "Rs.800-3000 / $22-80",
-        intents: ["calm", "sleep", "love", "creativity", "gifting"]
-      },
-      citrine: {
-        id: "citrine",
-        name: "Citrine",
-        hex: "#E8A020",
-        traditional_note: "Traditionally associated with warmth, optimism, and generosity across Mediterranean and Asian cultures.",
-        price_range: "Rs.300-800 / $8-22",
-        intents: ["positivity", "energy", "creativity", "confidence", "gifting"]
-      },
-      green_aventurine: {
-        id: "green_aventurine",
-        name: "Green Aventurine",
-        hex: "#4CAF72",
-        traditional_note: "Traditionally associated with opportunity and optimism across Tibetan, Italian, and Chinese cultures, with documented decorative use spanning several centuries.",
-        price_range: "Rs.200-600 / $5-18",
-        intents: ["positivity", "energy", "creativity", "gifting", "grounding"]
-      },
-      obsidian: {
-        id: "obsidian",
-        name: "Obsidian",
-        hex: "#1A1A1A",
-        traditional_note: "Historically used across Mesoamerican, ancient Mediterranean, and indigenous North American cultures as a ceremonial material associated with clarity and grounding.",
-        price_range: "Rs.200-600 / $5-18",
-        intents: ["grounding", "protection", "stress", "clarity"]
-      },
-      labradorite: {
-        id: "labradorite",
-        name: "Labradorite",
-        hex: "#4682B4",
-        traditional_note: "Traditionally associated with imagination and the unseen, with the Inuit peoples historically describing it as frozen northern lights captured in stone.",
-        price_range: "Rs.600-2000 / $18-55",
-        intents: ["creativity", "clarity", "focus", "protection"]
-      }
-    };
 
-    const INTENT_MAP = {
-      calm:       { primary: "amethyst",        secondary: "aquamarine" },
-      focus:      { primary: "clear_quartz",    secondary: "lapis_lazuli" },
-      confidence: { primary: "tigers_eye",      secondary: "carnelian" },
-      grounding:  { primary: "black_tourmaline",secondary: "obsidian" },
-      love:       { primary: "rose_quartz",     secondary: "moonstone" },
-      creativity: { primary: "labradorite",     secondary: "citrine" },
-      positivity: { primary: "citrine",         secondary: "green_aventurine" },
-      protection: { primary: "black_tourmaline",secondary: "obsidian" },
-      gifting:    { primary: "rose_quartz",     secondary: "amethyst" }
-    };
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html" aria-label="Gem Intent home">
+      <img src="assets/img/logo-mark.svg" alt="" width="28" height="28">
+      <span>Gem Intent</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="finder.html">Finder</a>
+      <a href="stones/index.html">Featured stones</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="finder.html">Open Stone Finder</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="finder.html">Finder</a>
+    <a href="stones/index.html">Featured stones</a>
+    <a href="guides/index.html">Guides</a>
+    <a href="about.html">About</a>
+    <a class="btn btn-primary mobile-nav-cta" href="finder.html">Open Stone Finder</a>
+  </nav>
+</header>
 
-    function buildResultCard(stone) {
-      return `
-        <div class="result-card">
-          <div class="stone-circle" style="background-color:${stone.hex};"></div>
-          <p class="stone-name">${stone.name}</p>
-          <p class="stone-note">${stone.traditional_note}</p>
-          <span class="price-badge">${stone.price_range}</span>
-          <div class="result-actions">
-            <a class="btn-secondary" href="/stones/${stone.id.replace(/_/g,'-')}.html">Full details</a>
-            <a class="btn-primary" href="#">Where to buy</a>
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Updated for 2026 · grounded buying guidance</span>
+        <h1>Choose a stone with less guesswork and a better first fit.</h1>
+        <p class="hero-sub">Gem Intent helps you narrow down stones by intent, budget, look, and how you actually want to use them. The experience is built for first-time buyers who want a calm, practical answer before they shop.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="finder.html">Open Stone Finder</a>
+          <a class="btn btn-secondary" href="stones/index.html">Browse featured stones</a>
+        </div>
+        <div class="hero-mini">
+          <span>16 stone profiles</span>
+          <span>No medical claims</span>
+          <span>Buying, care, and gifting notes</span>
+        </div>
+        <div class="hero-quick">
+          <a class="quick-link" href="finder.html?intent=calm"><strong>I want calm</strong><span>Start with amethyst, moonstone, and softer daily-wear picks.</span></a>
+          <a class="quick-link" href="finder.html?intent=confidence"><strong>I want confidence</strong><span>Compare warmer, stronger-looking stones first.</span></a>
+          <a class="quick-link" href="finder.html?intent=love"><strong>I want to gift</strong><span>Open the finder with gifting-friendly stones in mind.</span></a>
+          <a class="quick-link" href="guides/how-to-select-the-right-stone-for-me.html"><strong>Not sure where to begin</strong><span>Read the short 2026 guide first, then come back to the tool.</span></a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="hero-figure">
+          <img src="assets/img/hero-gems.svg" alt="Illustrated cluster of gemstones">
+        </div>
+        <div class="hero-note-grid">
+          <div class="note-card">
+            <small>No guesswork</small>
+            <strong>Matched to your intent and lifestyle</strong>
+            <p>The finder uses your goal, how you plan to wear it, your budget, and preferred look to surface the most relevant stone first.</p>
+          </div>
+          <div class="note-card">
+            <small>Format guidance</small>
+            <strong>Bracelet, ring, pendant, or loose stone</strong>
+            <p>After your match appears, choose a format — the buying advice adjusts to help you find the right listing, not just the right stone.</p>
+          </div>
+          <div class="note-card">
+            <small>Grounded in tradition</small>
+            <strong>Cultural history, not medical claims</strong>
+            <p>Every association on this site is framed as documented cultural or historical tradition. No outcome promises, no pseudoscience.</p>
           </div>
         </div>
-      `;
-    }
+      </aside>
+    </div>
+  </section>
 
-    // Intent card click handler
-    const intentCards = document.querySelectorAll('.intent-card');
-    const resultsArea = document.getElementById('results-area');
-    const resultCards = document.getElementById('result-cards');
+  <section class="section section-top-tight">
+    <div class="container split-band">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">How it works</div>
+          <h2 class="section-title">A short path from “I don’t know” to a stone that actually fits.</h2>
+          <p class="section-lead">The site is designed to get the first useful action high on the page, then earn trust with better explanations once the user is engaged.</p>
+        </div>
+      </div>
+      <div class="step-grid">
+        <div class="step-card"><span class="step-num">1</span><strong>Start with intent</strong><p>Pick the feeling, message, or use case you care about instead of browsing dozens of stones at random.</p></div>
+        <div class="step-card"><span class="step-num">2</span><strong>Filter by real-world fit</strong><p>Choose budget comfort, whether it is for daily wear or gifting, and the visual direction you are actually drawn to.</p></div>
+        <div class="step-card"><span class="step-num">3</span><strong>Decide the format next</strong><p>The result explains whether bracelet, ring, pendant, or loose stone is the smarter next move before you shop.</p></div>
+      </div>
+    </div>
+  </section>
 
-    intentCards.forEach(function(card) {
-      card.addEventListener('click', function() {
-        intentCards.forEach(function(c) { c.classList.remove('selected'); });
-        card.classList.add('selected');
+  <section class="section section-lg" id="featured-stones">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Featured stones</div>
+          <h2 class="section-title">Start with the stones people compare most often in 2026.</h2>
+          <p class="section-lead">These are the pages most first-time buyers tend to open first when they want calm, clarity, confidence, gifting help, or an easy everyday bracelet.</p>
+        </div>
+        <a class="btn btn-secondary" href="stones/index.html">See the full stone library</a>
+      </div>
+      <div class="grid-3">
+        
+    <a class="featured-card" href="stones/amethyst.html">
+      <img src="assets/img/stones/amethyst.svg" alt="Amethyst gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Amethyst</h3>
+      <p>Deep purple beads with natural colour variation — darker and lighter patches within each bead give a rich, layered appearance on the wrist.</p>
+      <div class="meta-row">
+        <span class="badge">Calm, Stress relief, Clarity</span>
+        <span class="badge">Rs.300-800 / $8-22</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+    <a class="featured-card" href="stones/rose-quartz.html">
+      <img src="assets/img/stones/rose-quartz.svg" alt="Rose Quartz gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Rose Quartz</h3>
+      <p>Pale blush-pink beads with a soft translucent milky quality — subtle and delicate on the wrist, suits both minimalist and layered styles.</p>
+      <div class="meta-row">
+        <span class="badge">Love, Relationships, Calm</span>
+        <span class="badge">Rs.300-900 / $8-25</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+    <a class="featured-card" href="stones/tigers-eye.html">
+      <img src="assets/img/stones/tigers-eye.svg" alt="Tiger&#x27;s Eye gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Tiger's Eye</h3>
+      <p>Warm caramel and gold beads with a shifting silky sheen — the chatoyancy creates movement and depth, making it eye-catching without being loud.</p>
+      <div class="meta-row">
+        <span class="badge">Confidence, Focus, Clarity</span>
+        <span class="badge">Rs.250-700 / $7-20</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+    <a class="featured-card" href="stones/clear-quartz.html">
+      <img src="assets/img/stones/clear-quartz.svg" alt="Clear Quartz gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Clear Quartz</h3>
+      <p>Icy transparent to milky white beads — clean and understated on the wrist, works well alone or as a neutral pairing with almost any other stone.</p>
+      <div class="meta-row">
+        <span class="badge">Clarity, Focus, Energy</span>
+        <span class="badge">Rs.200-600 / $5-18</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+    <a class="featured-card" href="stones/black-tourmaline.html">
+      <img src="assets/img/stones/black-tourmaline.svg" alt="Black Tourmaline gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Black Tourmaline</h3>
+      <p>Deep matte-to-glossy black beads — bold and grounding on the wrist, pairs well with lighter stones or metals for contrast.</p>
+      <div class="meta-row">
+        <span class="badge">Protection, Grounding, Stress relief</span>
+        <span class="badge">Rs.350-900 / $10-25</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+    <a class="featured-card" href="stones/citrine.html">
+      <img src="assets/img/stones/citrine.svg" alt="Citrine gemstone graphic" loading="lazy">
+      <span class="card-label">Featured stone</span>
+      <h3>Citrine</h3>
+      <p>Warm golden-amber transparent beads that catch the light — cheerful and warm on the wrist, suits yellow gold settings particularly well.</p>
+      <div class="meta-row">
+        <span class="badge">Positivity, Energy, Creativity</span>
+        <span class="badge">Rs.300-800 / $8-22</span>
+      </div>
+      <span class="card-link">Open guide →</span>
+    </a>
+    
+      </div>
+    </div>
+  </section>
 
-        const intent = card.getAttribute('data-intent');
-        const map = INTENT_MAP[intent];
-        if (!map) return;
+  <div class="ad-slot" aria-hidden="true"></div>
 
-        const primary = HOME_STONES[map.primary];
-        const secondary = HOME_STONES[map.secondary];
-        if (!primary || !secondary) return;
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Guides people actually search for</div>
+          <h2 class="section-title">Helpful answers before the product links come in.</h2>
+          <p class="section-lead">Practical answers to the questions most first-time buyers ask before choosing a stone — from spotting fakes to choosing the right gift without overthinking it.</p>
+        </div>
+        <a class="btn btn-secondary" href="guides/index.html">Open all guides</a>
+      </div>
+      <div class="guide-grid">
+        
+    <a class="guide-card" href="guides/how-to-select-the-right-stone-for-me.html">
+      <span class="card-label">2026 guide</span>
+      <h3>How do I select the right stone for me?</h3>
+      <p>A practical way to choose by intent, use case, look, budget, and listing quality instead of buying on impulse.</p>
+      <span class="card-link">Read guide →</span>
+    </a>
+    
+        
+    <a class="guide-card" href="guides/gift-a-healing-stone.html">
+      <span class="card-label">Gifting guide</span>
+      <h3>I want to gift a healing stone to someone</h3>
+      <p>A better framework for choosing a gifting stone without pretending you can guess someone’s preferences from symbolism alone.</p>
+      <span class="card-link">Read guide →</span>
+    </a>
+    
+        
+    <a class="guide-card" href="authenticity.html">
+      <span class="card-label">Trust and buying</span>
+      <h3>How to tell if a stone bracelet is real</h3>
+      <p>What to look for in photos, listings, wording, price, and close-ups before you click through to a marketplace.</p>
+      <span class="card-link">Read guide →</span>
+    </a>
+    
+      </div>
+    </div>
+  </section>
 
-        resultCards.innerHTML = buildResultCard(primary) + buildResultCard(secondary);
-        resultsArea.classList.add('visible');
-        resultsArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    });
-  </script>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">About this site</div>
+          <h2 class="section-title">Transparent about what we do and how we make recommendations.</h2>
+          <p class="section-lead">Gem Intent is an independent stone guide. We explain our recommendation method, disclose affiliate relationships clearly, and publish a corrections policy so you can challenge anything that looks wrong.</p>
+        </div>
+      </div>
+      <div class="trust-grid">
+        <a class="trust-card" href="about.html"><span class="card-label">About</span><h3>Why Gem Intent exists</h3><p>The site’s position, editorial stance, and what kind of help it does and does not provide.</p><span class="card-link">Read page →</span></a>
+        <a class="trust-card" href="how-we-calculate.html"><span class="card-label">Methodology</span><h3>How we calculate finder results</h3><p>The scoring logic behind intent, practicality, budget fit, gifting bias, and look matching.</p><span class="card-link">Read page →</span></a>
+        <a class="trust-card" href="editorial-policy.html"><span class="card-label">Policy</span><h3>Editorial and review policy</h3><p>How pages are updated, how affiliate placements are handled, and why no guide makes medical claims.</p><span class="card-link">Read page →</span></a>
+        <a class="trust-card" href="contact.html"><span class="card-label">Contact</span><h3>Questions and corrections</h3><p>Found a factual error? Want to suggest a guide topic or discuss a partnership? Email us at utilapps.contact@gmail.com — we respond within 2–3 working days.</p><span class="card-link">Get in touch →</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-copy">© 2026 Gem Intent</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="how-we-calculate.html">How we calculate</a>
+        <a href="editorial-policy.html">Editorial policy</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      Some links on this site may earn a commission at no extra cost to you. That never changes how we describe a stone, score the finder, or write a guide.
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>
