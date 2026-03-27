@@ -591,3 +591,228 @@ button{font:inherit}
   color: var(--muted, #666);
   line-height: 1.4;
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   WHERE TO BUY — inline buy section on stone pages
+   ══════════════════════════════════════════════════════════════════ */
+.wt-buy {
+  margin: 32px 0;
+  border: 1.5px solid var(--border, #E8E3DC);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+.wt-buy-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border, #E8E3DC);
+  background: var(--surface, #FAF8F5);
+}
+.wt-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;  /* hide text — swatch is visual only */
+}
+.wt-buy-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple, #3D2B55);
+  margin-bottom: 2px;
+}
+.wt-buy-sub {
+  font-size: 12px;
+  color: var(--muted, #666);
+  line-height: 1.4;
+}
+
+/* ── Badges ─────────────────────────────────────────────────────── */
+.wt-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+.wt-badge-own     { background: #3D2B55; color: #fff; }
+.wt-badge-coming  { background: #F0EDE8; color: #666; border: 1px solid #E8E3DC; }
+.wt-badge-live    { background: #1B7A4A; color: #fff; }
+.wt-badge-amazon  { background: #FF9900; color: #111; }
+.wt-badge-deal    { background: #FFFBEB; color: #B8924A; border: 1px solid #B8924A; }
+.wt-badge-ci      { background: #3D2B55; color: #fff; }
+.wt-badge-etsy    { background: #F1641E; color: #fff; }
+
+/* ── Own store card ─────────────────────────────────────────────── */
+.wt-own-store {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border, #E8E3DC);
+  background: #FDFBFF;
+  border-left: 4px solid #3D2B55;
+}
+.wt-own-badge {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.wt-own-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple, #3D2B55);
+  margin-bottom: 4px;
+}
+.wt-own-desc {
+  font-size: 12px;
+  color: var(--muted, #666);
+  line-height: 1.5;
+}
+.wt-own-price-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+.wt-own-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--purple, #3D2B55);
+}
+.wt-own-buy-btn {
+  background: var(--purple, #3D2B55);
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Amazon primary card ────────────────────────────────────────── */
+.wt-amazon-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border, #E8E3DC);
+  text-decoration: none;
+  color: var(--text, #1C1C1A);
+  background: #fff;
+  transition: background 0.15s;
+}
+.wt-amazon-card:hover {
+  background: var(--surface, #FAF8F5);
+  text-decoration: none;
+}
+.wt-amazon-left {
+  flex: 1;
+  min-width: 0;
+}
+.wt-amazon-top-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.wt-amazon-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple, #3D2B55);
+  margin-bottom: 4px;
+}
+.wt-amazon-sub {
+  font-size: 12px;
+  color: var(--muted, #666);
+  line-height: 1.4;
+}
+.wt-amazon-right {
+  text-align: right;
+  flex-shrink: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+}
+.wt-amazon-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #B12704;
+}
+.wt-amazon-was {
+  font-size: 11px;
+  color: #999;
+  text-decoration: line-through;
+}
+.wt-amazon-off {
+  font-size: 11px;
+  color: #1B7A4A;
+  font-weight: 600;
+}
+.wt-amazon-cta {
+  font-size: 12px;
+  color: var(--gold, #B8924A);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ── Secondary row: Conscious Items + Etsy ──────────────────────── */
+.wt-secondary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border, #E8E3DC);
+}
+.wt-sec-card {
+  display: block;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--text, #1C1C1A);
+  transition: background 0.15s;
+  border-right: 1px solid var(--border, #E8E3DC);
+}
+.wt-sec-card:last-child { border-right: none; }
+.wt-sec-card:hover { background: var(--surface, #FAF8F5); text-decoration: none; }
+.wt-sec-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple, #3D2B55);
+  margin: 6px 0 3px;
+}
+.wt-sec-desc {
+  font-size: 11px;
+  color: var(--muted, #666);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.wt-sec-cta {
+  font-size: 12px;
+  color: var(--gold, #B8924A);
+  font-weight: 600;
+}
+
+/* ── Disclosure ─────────────────────────────────────────────────── */
+.wt-disclosure {
+  font-size: 11px;
+  color: #aaa;
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+.wt-disclosure a { color: #aaa; text-decoration: underline; }
+
+/* ── Mobile ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .wt-amazon-card { flex-direction: column; gap: 10px; }
+  .wt-amazon-right { text-align: left; padding-left: 0; flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .wt-secondary-row { grid-template-columns: 1fr; }
+  .wt-sec-card { border-right: none; border-bottom: 1px solid var(--border, #E8E3DC); }
+  .wt-sec-card:last-child { border-bottom: none; }
+}

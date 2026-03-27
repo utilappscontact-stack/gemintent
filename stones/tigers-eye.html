@@ -94,6 +94,102 @@
           <div class="check-item"><strong>Price expectation</strong>Rs.250-700 / $7-20 is a useful orientation range for everyday pieces, but finish, bead size, treatment, and seller trust can move the final price.</div>
         </div>
 
+        
+        <!-- WHERE TO BUY — inline section, positioned after authenticity checks -->
+        <div class="wt-buy">
+
+          <div class="wt-buy-header">
+            <div class="wt-swatch" style="background:#B8860B;color:#1C1C1A;">
+              <span>Tiger's Eye</span>
+            </div>
+            <div>
+              <p class="wt-buy-title">Where to buy Tiger's Eye</p>
+              <p class="wt-buy-sub">Three options below — from our own store, Amazon India, and specialist sellers. All links open in a new tab.</p>
+            </div>
+          </div>
+
+          <!-- OWN STORE CARD — activate this once your reseller store is live -->
+          <div class="wt-own-store">
+            <div class="wt-own-badge">
+              <span class="wt-badge wt-badge-own">Gem Intent Store</span>
+              <span class="wt-badge wt-badge-coming">Coming soon</span>
+            </div>
+            <div class="wt-own-body">
+              <p class="wt-own-name">Curated Tiger's Eye Bracelet — Gem Intent Pick</p>
+              <p class="wt-own-desc">We are currently building our own curated bracelet store. When live, this will show hand-selected tiger's eye bracelets we have personally verified for quality, bead size, and natural stone authenticity — shipped directly.</p>
+            </div>
+            <!-- TO ACTIVATE: replace the div above with an <a> tag, add href to your store product page,
+                 change wt-badge-coming to wt-badge-live, remove "Coming soon" badge,
+                 add price and a "Buy now" CTA. See comment block at bottom of this section. -->
+          </div>
+
+          <!-- AMAZON CARD — primary affiliate, most clicks expected -->
+          <a class="wt-amazon-card" href="https://www.amazon.in/s?k=natural+tiger+eye+bracelet+genuine+8mm&tag=gemintent-21" target="_blank" rel="noopener sponsored">
+            <div class="wt-amazon-left">
+              <div class="wt-amazon-top-row">
+                <span class="wt-badge wt-badge-amazon">Amazon India</span>
+                <span class="wt-badge wt-badge-deal">Top pick</span>
+              </div>
+              <p class="wt-amazon-title">Natural Tiger's Eye Bracelet</p>
+              <p class="wt-amazon-sub">Genuine chatoyant beads · Men & women · 4.3★</p>
+            </div>
+            <div class="wt-amazon-right">
+              <div class="wt-amazon-price">₹399</div>
+              <div class="wt-amazon-was">₹1,299</div>
+              <div class="wt-amazon-off">69% off</div>
+              <div class="wt-amazon-cta">View →</div>
+            </div>
+          </a>
+
+          <!-- SECONDARY ROW — Conscious Items + Etsy -->
+          <div class="wt-secondary-row">
+            <a class="wt-sec-card" href="https://consciousitems.com/collections/bracelets?stone=tigers-eye" target="_blank" rel="noopener sponsored">
+              <span class="wt-badge wt-badge-ci">Conscious Items</span>
+              <p class="wt-sec-name">Authentic Tiger's Eye Bracelet</p>
+              <p class="wt-sec-desc">Specialist crystal retailer · Authenticity guarantee · 500k+ customers</p>
+              <span class="wt-sec-cta">Shop →</span>
+            </a>
+            <a class="wt-sec-card" href="https://www.etsy.com/search?q=genuine+tigers+eye+bracelet+natural" target="_blank" rel="noopener sponsored">
+              <span class="wt-badge wt-badge-etsy">Etsy</span>
+              <p class="wt-sec-name">Handmade Tiger's Eye Bracelets</p>
+              <p class="wt-sec-desc">Artisan sellers · Filter 5★ shops · Look for close-up bead photos</p>
+              <span class="wt-sec-cta">Browse →</span>
+            </a>
+          </div>
+
+          <p class="wt-disclosure">Some links above earn a small commission at no extra cost to you. This does not affect which products we highlight. <a href="../affiliate-disclosure.html">Disclosure →</a></p>
+
+          <!--
+          ════════════════════════════════════════════════════════════════
+          OWN STORE ACTIVATION — when your reseller store is ready:
+
+          1. Replace the wt-own-store div with this block:
+          ────────────────────────────────────────────────────────────────
+          <a class="wt-own-store wt-own-store-live" href="[YOUR PRODUCT URL]" target="_blank">
+            <div class="wt-own-badge">
+              <span class="wt-badge wt-badge-own">Gem Intent Store</span>
+              <span class="wt-badge wt-badge-live">In stock</span>
+            </div>
+            <div class="wt-own-body">
+              <p class="wt-own-name">Curated [Stone Name] Bracelet — Gem Intent Pick</p>
+              <p class="wt-own-desc">Hand-selected and verified for natural stone authenticity.
+              8mm natural beads, stretch cord, fits most wrists.</p>
+            </div>
+            <div class="wt-own-price-row">
+              <span class="wt-own-price">₹[YOUR PRICE]</span>
+              <span class="wt-own-buy-btn">Buy now →</span>
+            </div>
+          </a>
+          ────────────────────────────────────────────────────────────────
+          2. Add wt-badge-live to site.css:
+             .wt-badge-live { background:#1B7A4A; color:#fff; }
+          3. Add wt-own-store-live styles to site.css:
+             .wt-own-store-live { border-color:#1B7A4A; cursor:pointer; text-decoration:none; }
+             .wt-own-store-live:hover { background:#F0FAF4; }
+          ════════════════════════════════════════════════════════════════
+          -->
+
+        </div><!-- end wt-buy -->
         <div class="ad-slot" aria-hidden="true"></div>
 
         <h2>Choosing the best format.</h2>
@@ -130,21 +226,8 @@
         </div>
         <h3 style="margin-top:18px">Pairs well with</h3>
         <div class="pair-grid"><a class="stone-pair" href="citrine.html"><img src="../assets/img/stones/citrine.svg" alt="Citrine graphic"><div><h3>Citrine</h3><p>Warm golden-amber transparent beads that catch the light — cheerful and warm on the wrist, suits yellow gold settings particularly well.</p></div></a><a class="stone-pair" href="black-tourmaline.html"><img src="../assets/img/stones/black-tourmaline.svg" alt="Black Tourmaline graphic"><div><h3>Black Tourmaline</h3><p>Deep matte-to-glossy black beads — bold and grounding on the wrist, pairs well with lighter stones or metals for contrast.</p></div></a></div>
-        <h3 style="margin-top:18px">Where to buy Tiger's Eye</h3>
-        <div class="buy-card-links">
-          <a class="buy-link-card" href="https://consciousitems.com/collections/bracelets?stone=tigers-eye" target="_blank" rel="noopener sponsored">
-            <strong>Conscious Items</strong>
-            <span>Specialist crystal jewellery with an authenticity guarantee. One of the most reputable dedicated crystal retailers online.</span>
-          </a>
-          <a class="buy-link-card" href="https://www.etsy.com/search?q=genuine+tiger+eye+bracelet+natural+chatoyant" target="_blank" rel="noopener sponsored">
-            <strong>Etsy — artisan sellers</strong>
-            <span>Search for genuine tiger's eye bracelet natural. Review seller ratings and look for close-up bead photos before buying.</span>
-          </a>
-          <a class="buy-link-card" href="https://www.amazon.in/s?k=natural+tiger+eye+bracelet" target="_blank" rel="noopener sponsored">
-            <strong>Amazon India</strong>
-            <span>Wide range across price points. Filter by seller rating and check the product description for bead size and stone type before purchasing.</span>
-          </a>
-        </div>
+        <h3 style="margin-top:18px">Where to buy</h3>
+        <p style="font-size:12px;color:#666;line-height:1.5;">Buying options are shown in the main guide above — Amazon India, Conscious Items, and Etsy, with prices and ratings.</p>
       </aside>
     </div>
   </section>
